@@ -117,11 +117,18 @@ MonoBehaviour:
   firePoint: {fileID: 3940326355876292100}
   projectilePrefab: {fileID: 2991956194851278345, guid: 9df36c8062a2f8c48858b36729bee225,
     type: 3}
-  bulletForce: 20
+  projectileForce: 30
   fireRate: 0.2
   slowZonePrefab: {fileID: 6618499853714654016, guid: 2a50332958746b340859311e5999dd62,
     type: 3}
-  slowZonePower: 0.5
+  slowZoneRate: 5
+  meleeAttackPrefeb: {fileID: 8117919341343864214, guid: 65a3b50b5f9d2034bbe8894507860591,
+    type: 3}
+  meleeRate: 1
+  fireBallPrefab: {fileID: 2090948703310689599, guid: 78809c0b63331b1498d70dd679544940,
+    type: 3}
+  fireBallForce: 10
+  fireBallRate: 5
 --- !u!114 &3940326355920225250
 MonoBehaviour:
   m_ObjectHideFlags: 0

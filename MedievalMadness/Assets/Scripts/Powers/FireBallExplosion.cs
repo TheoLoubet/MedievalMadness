@@ -1,9 +1,10 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttack : MonoBehaviour
+public class FireBallExplosion : MonoBehaviour
 {
-    public float damage = 3;
+    public float damage = 4;
 
     private void Start()
     {

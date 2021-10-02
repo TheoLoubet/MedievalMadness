@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBalll : MonoBehaviour
+public class FireBall : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject explosionPrefab;
+    public float damage = 2;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (!collision.gameObject.CompareTag("Projectile"))
+        {
+            if (collision.gameObject.CompareTag("Monster"))
+            {
+                collision.gameObject.GetComponent<SmallMonster>().TakeDamage(this.damage);
+            }
+            GameObject effect = Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
+            Destroy(effect, 0.1f);
+            Destroy(this.gameObject);
+        }
     }
 }
