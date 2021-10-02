@@ -8,7 +8,8 @@ public class AIController : MonoBehaviour
     GameObject[] goalLocations;
     NavMeshAgent agent;
     float speedMult;
-    float fleeRadius = 8;
+    public float fleeRadius = 3;
+    public float speedFlee = 4;
 
     void ResetAgent()
     {
@@ -43,19 +44,11 @@ public class AIController : MonoBehaviour
     //called when a monster is too close
     public void Fleeing(Vector3 position)
     {
-        print(position);
         Vector3 fleeDirection = (this.transform.position - position).normalized;
         Vector3 newgoal = this.transform.position + fleeDirection * fleeRadius;
-        
-        NavMeshPath path = new NavMeshPath();
-        agent.CalculatePath(newgoal, path);
-
-        if(path.status != NavMeshPathStatus.PathInvalid)
-        {
-            agent.SetDestination(path.corners[path.corners.Length -1]);
-            agent.speed = 10;
-            agent.angularSpeed = 500;
-        }
+        agent.SetDestination(newgoal);
+        agent.speed = speedFlee;
+        agent.angularSpeed = 300;
     }
 
    
