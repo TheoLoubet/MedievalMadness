@@ -9,7 +9,7 @@ public class FireBall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Projectile"))
+        if (!collision.gameObject.CompareTag("Projectile") && !collision.gameObject.CompareTag("Player"))
         {
             if (collision.gameObject.CompareTag("Monster"))
             {
