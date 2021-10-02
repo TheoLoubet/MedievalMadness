@@ -28,6 +28,12 @@ public class PlayerController : MonoBehaviour
     public float fireBallRate = 5f;
     private float timeUntilNextFireBall = 0f;
 
+    // Laser
+    public Transform laser;
+    public float laserDuration = 5f;
+    public float laserRate = 10f;
+    private float timeUntilNextLaser = 0f;
+
 
     void Update()
     {
@@ -36,17 +42,17 @@ public class PlayerController : MonoBehaviour
         {
             timeUntilNextShoot -= Time.deltaTime;
         }
-        if (Input.GetAxisRaw("RightTrigger") > 0 && timeUntilNextShoot <= 0)
+        if (Input.GetAxisRaw("RightTrigger") > 0 && timeUntilNextShoot <= 0 && laser.gameObject.activeSelf == false)
         {
             Shoot();
         }
-
+        
         // Slow Zone
         if (timeUntilNextSlowZone > 0)
         {
             timeUntilNextSlowZone -= Time.deltaTime;
         }
-        if (Input.GetButtonDown("SlowZone") && timeUntilNextSlowZone <= 0)
+        if (Input.GetButtonDown("SlowZone") && timeUntilNextSlowZone <= 0 && laser.gameObject.activeSelf == false)
         {
             SlowZone();
         }
@@ -56,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             timeUntilNextMelee -= Time.deltaTime;
         }
-        if (Input.GetButtonDown("MeleeAttack") && timeUntilNextMelee <= 0)
+        if (Input.GetButtonDown("MeleeAttack") && timeUntilNextMelee <= 0 && laser.gameObject.activeSelf == false)
         {
             Melee();
         }
@@ -66,9 +72,20 @@ public class PlayerController : MonoBehaviour
         {
             timeUntilNextFireBall -= Time.deltaTime;
         }
-        if (Input.GetButtonDown("FireBall") && timeUntilNextFireBall <= 0)
+        if (Input.GetButtonDown("FireBall") && timeUntilNextFireBall <= 0 && laser.gameObject.activeSelf == false)
         {
             FireBall();
+        }
+
+        // Laser
+        if (timeUntilNextLaser > 0)
+        {
+            timeUntilNextLaser -= Time.deltaTime;
+        }
+        if (Input.GetButtonDown("Laser") && timeUntilNextLaser <= 0)
+        {
+            laser.gameObject.SetActive(true);
+            Invoke("StopLaser", laserDuration);
         }
 
     }
@@ -104,5 +121,11 @@ public class PlayerController : MonoBehaviour
         fireBallRB.AddForce(firePoint.up * fireBallForce, ForceMode2D.Impulse);
 
         timeUntilNextFireBall = fireBallRate;
+    }
+
+    void StopLaser()
+    {
+        laser.gameObject.SetActive(false);
+        timeUntilNextLaser = laserRate;
     }
 }

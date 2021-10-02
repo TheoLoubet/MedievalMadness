@@ -70,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Rotate player
-        Vector2 lookDirection = aimVector - rb.position;
         float endAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg - 90f;   // get end angle from controller
 
         float currentAngle = rb.rotation;                           // get current angle 
