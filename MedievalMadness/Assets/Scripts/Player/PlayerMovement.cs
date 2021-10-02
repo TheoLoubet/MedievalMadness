@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
         aimInput.x = Input.GetAxis("Horizontal2");
         aimInput.y = Input.GetAxis("Vertical2");
 
-        if (aimInput.magnitude >= 0.7f)
+        if (aimInput.magnitude >= 0.5)
         {
             aimVector.x = aimInput.x;
             aimVector.y = aimInput.y;
