@@ -45,8 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
         // Rotate player
         Vector2 lookDirection = aimVector - rb.position;
-        float angle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        float endAngle = Mathf.Atan2(aimVector.y, aimVector.x) * Mathf.Rad2Deg - 90f;   // get end angle from controller
+
+        float currentAngle = rb.rotation;                           // get current angle 
+        currentAngle = Mathf.LerpAngle(currentAngle,endAngle,0.3f); // make Lerp to smooth movement
+        rb.rotation = currentAngle;                                 // set Current Angle as rotation
 
     }
 }
