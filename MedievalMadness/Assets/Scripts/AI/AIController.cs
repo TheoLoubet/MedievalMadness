@@ -9,11 +9,12 @@ public class AIController : MonoBehaviour
     NavMeshAgent agent;
     float speedMult;
     public float fleeRadius = 3;
-    public float speedFlee = 4;
+    public float speedFlee = 3;
+    private Rigidbody2D rb;
 
     void ResetAgent()
     {
-        speedMult = Random.Range(0.5f, 1.5f);
+        speedMult = Random.Range(0.5f, 1f);
         agent.speed = 2 * speedMult;
         agent.angularSpeed = 120;
         agent.ResetPath();
@@ -21,10 +22,12 @@ public class AIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = gameObject.GetComponent<Rigidbody2D>();
         goalLocations = GameObject.FindGameObjectsWithTag("goal");
         agent = this.GetComponent<NavMeshAgent>();
-        agent.SetDestination(goalLocations[Random.Range(0,goalLocations.Length)].transform.position);
+        Vector3 randomPosition = goalLocations[Random.Range(0,goalLocations.Length)].transform.position;
+        agent.SetDestination(randomPosition);
+
         ResetAgent();
         agent.updateRotation = false;
 		agent.updateUpAxis = false;
@@ -37,8 +40,16 @@ public class AIController : MonoBehaviour
         if(agent.remainingDistance < 1)
         {
             ResetAgent();
-            agent.SetDestination(goalLocations[Random.Range(0,goalLocations.Length)].transform.position);
+            Vector3 randomPosition = goalLocations[Random.Range(0,goalLocations.Length)].transform.position;
+            agent.SetDestination(randomPosition);
         }
+        // Rotate civil
+        
+    }
+
+    private void LookAt(Vector3 goal)
+    {
+        Vector2 goalToLookAt = new Vector2(goal.x, goal.y);
     }
 
     //called when a monster is too close
