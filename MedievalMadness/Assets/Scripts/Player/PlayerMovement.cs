@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 aimInput;
     Vector2 aimVector;
 
-    private void Start()
+    private void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
     }

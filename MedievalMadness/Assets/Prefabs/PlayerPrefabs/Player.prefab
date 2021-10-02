@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3940326355920225250}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +119,9 @@ MonoBehaviour:
     type: 3}
   bulletForce: 20
   fireRate: 0.2
+  slowZonePrefab: {fileID: 6618499853714654016, guid: 2a50332958746b340859311e5999dd62,
+    type: 3}
+  slowZonePower: 0.5
 --- !u!114 &3940326355920225250
 MonoBehaviour:
   m_ObjectHideFlags: 0

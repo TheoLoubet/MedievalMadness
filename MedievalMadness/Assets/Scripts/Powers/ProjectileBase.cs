@@ -19,8 +19,5 @@ public class ProjectileBase : MonoBehaviour
             Destroy(effect, 0.2f);
             Destroy(this.gameObject);
         }
-       
-
-
     }
 }
