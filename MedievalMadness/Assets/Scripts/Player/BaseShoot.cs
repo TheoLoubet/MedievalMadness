@@ -11,13 +11,16 @@ public class BaseShoot : MonoBehaviour
 
     public float bulletForce = 20f;
     public float fireRate = 0.2f;
-    float timeUntilNextShoot = 0f;
+    private float timeUntilNextShoot = 0f;
 
     void Update()
     {
-        timeUntilNextShoot -= Time.deltaTime;
+        if (timeUntilNextShoot > 0)
+        {
+            timeUntilNextShoot -= Time.deltaTime;
+        }
 
-        if (Mathf.Round(Input.GetAxisRaw("Trigger")) > 0 && timeUntilNextShoot <= 0)
+        if (Input.GetAxisRaw("RightTrigger") > 0 && timeUntilNextShoot <= 0)
         {
             Shoot();
 
