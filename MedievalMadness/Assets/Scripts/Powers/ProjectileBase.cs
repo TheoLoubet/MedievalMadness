@@ -9,7 +9,7 @@ public class ProjectileBase : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!collision.gameObject.CompareTag("Projectile"))
+        if(!collision.gameObject.CompareTag("Projectile") && !collision.gameObject.CompareTag("Player"))
         {
             if (collision.gameObject.CompareTag("Monster"))
             {
@@ -19,8 +19,5 @@ public class ProjectileBase : MonoBehaviour
             Destroy(effect, 0.2f);
             Destroy(this.gameObject);
         }
-       
-
-
     }
 }

@@ -1,12 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterBase : MonoBehaviour
 {
     public float healthPoint;
+    public float moveSpeedDefault;
+    private float moveSpeed;
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        moveSpeed = moveSpeedDefault;
+    }
+
     public void TakeDamage(float damage)
     {
         this.healthPoint -= damage;
@@ -19,5 +23,14 @@ public class MonsterBase : MonoBehaviour
     public void Death()
     {
         Destroy(this.gameObject);
+    }
+
+    public void Slow(float power)
+    {
+        moveSpeed = moveSpeed * power;
+    }
+    public void UnSlow()
+    {
+        moveSpeed = moveSpeedDefault;
     }
 }

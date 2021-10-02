@@ -6,9 +6,7 @@ TagManager:
   tags:
   - Projectile
   - Monster
-  - Civil
-  - Walls
-  - goal
+  - SlowZone
   layers:
   - Default
   - TransparentFX
@@ -16,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Floor
-  - Wall
+  - 
+  - 
   - 
   - 
   - 
