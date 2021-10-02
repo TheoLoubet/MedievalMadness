@@ -1008,10 +1008,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2723971767379374580, guid: aa3901fea73da6d499c66979c96ec18b,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000,
+        type: 0}
+    - target: {fileID: 2723971767379374580, guid: aa3901fea73da6d499c66979c96ec18b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3388294309979405059, guid: aa3901fea73da6d499c66979c96ec18b,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571981857167238597, guid: aa3901fea73da6d499c66979c96ec18b,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571981857167238597, guid: aa3901fea73da6d499c66979c96ec18b,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571981857167238597, guid: aa3901fea73da6d499c66979c96ec18b,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 0.6134169
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571981857167238597, guid: aa3901fea73da6d499c66979c96ec18b,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.13247871
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571981857167238597, guid: aa3901fea73da6d499c66979c96ec18b,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0.6623925
       objectReference: {fileID: 0}
     - target: {fileID: 3940326355876292099, guid: aa3901fea73da6d499c66979c96ec18b,
         type: 3}
@@ -1088,6 +1124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021693460412882688, guid: aa3901fea73da6d499c66979c96ec18b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8289701430083344107, guid: aa3901fea73da6d499c66979c96ec18b,
         type: 3}
