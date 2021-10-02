@@ -27,7 +27,6 @@ public class AIController : MonoBehaviour
         agent = this.GetComponent<NavMeshAgent>();
         Vector3 randomPosition = goalLocations[Random.Range(0,goalLocations.Length)].transform.position;
         agent.SetDestination(randomPosition);
-
         ResetAgent();
         agent.updateRotation = false;
 		agent.updateUpAxis = false;
@@ -44,13 +43,14 @@ public class AIController : MonoBehaviour
             agent.SetDestination(randomPosition);
         }
         // Rotate civil
-        
+        Vector3 direction = agent.velocity.normalized;
+        float endAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+        float currentAngle = rb.rotation;
+        currentAngle = Mathf.LerpAngle(currentAngle,endAngle,0.3f);
+        rb.rotation = currentAngle;
     }
 
-    private void LookAt(Vector3 goal)
-    {
-        Vector2 goalToLookAt = new Vector2(goal.x, goal.y);
-    }
+    
 
     //called when a monster is too close
     public void Fleeing(Vector3 position)

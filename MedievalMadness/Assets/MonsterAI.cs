@@ -8,9 +8,11 @@ public class MonsterAI : MonoBehaviour
     GameObject[] goalLocations;
     NavMeshAgent agent;
     Vector3 currentPos;
+    private Rigidbody2D rb;
     //Start is called at Start
     private void Start() 
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
         agent = this.GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
 		agent.updateUpAxis = false;
@@ -32,5 +34,11 @@ public class MonsterAI : MonoBehaviour
             }
         }
         agent.SetDestination(oMin.transform.position);
+        // Rotate civil
+        Vector3 direction = agent.velocity.normalized;
+        float endAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
+        float currentAngle = rb.rotation;
+        currentAngle = Mathf.LerpAngle(currentAngle,endAngle,0.3f);
+        rb.rotation = currentAngle;
     }
 }
