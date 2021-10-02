@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class SlowZone : MonoBehaviour
 {
-    public float power = 0.5f;
+    public float slowPower = 0.5f;
+    public float speedPower = 1.5f;
     public float duration = 5f;
 
     private void Start()
@@ -14,7 +15,11 @@ public class SlowZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-            collision.gameObject.GetComponent<SmallMonster>().Slow(power);
+            collision.gameObject.GetComponent<SmallMonster>().Slow(slowPower);
+        }
+        else if (collision.gameObject.CompareTag("Civil"))
+        {
+            collision.gameObject.GetComponent<Civil>().SpeedUp(speedPower);
         }
 
     }
@@ -24,6 +29,10 @@ public class SlowZone : MonoBehaviour
         if (collision.gameObject.CompareTag("Monster"))
         {
             collision.gameObject.GetComponent<SmallMonster>().UnSlow();
+        }
+        else if (collision.gameObject.CompareTag("Civil"))
+        {
+            collision.gameObject.GetComponent<Civil>().SpeedDown();
         }
     }
 

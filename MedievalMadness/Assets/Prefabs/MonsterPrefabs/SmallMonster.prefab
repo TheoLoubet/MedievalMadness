@@ -10,10 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1122992511537080748}
   - component: {fileID: 6338958579569953269}
+  - component: {fileID: 4111044619746842420}
   - component: {fileID: 1100012654826800611}
   - component: {fileID: 8685147973711682733}
   - component: {fileID: -355288059137646376}
-  m_Layer: 0
+  - component: {fileID: 4037203459389668596}
+  m_Layer: 6
   m_Name: SmallMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: a5707e598e5c9414a8d2f27ee0648c05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -86,6 +88,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &4111044619746842420
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387223033254018714}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.5
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &1100012654826800611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621d873f18c758b4a9baffc80d4830e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: -355288059137646376}
   healthPoint: 2
+  moveSpeedDefault: 5
 --- !u!195 &-355288059137646376
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -147,3 +172,15 @@ NavMeshAgent:
   m_BaseOffset: 5.1199994
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4037203459389668596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387223033254018714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499d3fb834504774f8d06af3965f1d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

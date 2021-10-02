@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6305642629389003759}
   - component: {fileID: 6305642629389003758}
   - component: {fileID: 3219958553527035082}
-  m_Layer: 0
+  - component: {fileID: 5690437720146858500}
+  m_Layer: 3
   m_Name: Walls
   m_TagString: Walls
   m_Icon: {fileID: 0}
@@ -4588,6 +4589,22 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: 00000000
+--- !u!19719996 &5690437720146858500
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305642629389003752}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &6305642630024042006
 GameObject:
   m_ObjectHideFlags: 0

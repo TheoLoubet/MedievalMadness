@@ -1,14 +1,24 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterBase : MonoBehaviour
 {
-    public float healthPoint;
-    public float moveSpeedDefault;
-    private float moveSpeed;
+    public NavMeshAgent agent;
 
+    public float healthPoint;
+    public float moveSpeedDefault = 5;
+    
     private void Awake()
     {
-        moveSpeed = moveSpeedDefault;
+        agent.speed = moveSpeedDefault;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Civil"))
+        {
+            collision.gameObject.GetComponent<Civil>().Death();
+        }
     }
 
     public void TakeDamage(float damage)
@@ -27,10 +37,10 @@ public class MonsterBase : MonoBehaviour
 
     public void Slow(float power)
     {
-        moveSpeed = moveSpeed * power;
+        agent.speed = agent.speed * power;
     }
     public void UnSlow()
     {
-        moveSpeed = moveSpeedDefault;
+        agent.speed = moveSpeedDefault;
     }
 }

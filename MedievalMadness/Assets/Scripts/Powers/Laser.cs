@@ -4,7 +4,7 @@ public class Laser : MonoBehaviour
 {
     private LineRenderer lineRenderer;
     public LayerMask wallLayer;
-    public LayerMask monsterLayer;
+    public LayerMask hitLayer;
     RaycastHit2D[] ennemyHits;
 
     public float damage = 1;
@@ -36,12 +36,20 @@ public class Laser : MonoBehaviour
         }
         if (timeUntilNextDamage <= 0)
         {
-            ennemyHits = Physics2D.RaycastAll(this.transform.position, this.transform.up, 100f, monsterLayer);
+            ennemyHits = Physics2D.RaycastAll(this.transform.position, this.transform.up, 100f, hitLayer);
 
 
             for (int i = 0; i < ennemyHits.Length; i++)
             {
-                ennemyHits[i].transform.gameObject.GetComponent<MonsterBase>().TakeDamage(damage);
+                if (ennemyHits[i].transform.gameObject.CompareTag("Monster"))
+                {
+                    ennemyHits[i].transform.gameObject.GetComponent<MonsterBase>().TakeDamage(damage);
+                }
+                else if (ennemyHits[i].transform.gameObject.CompareTag("Civil"))
+                {
+                    ennemyHits[i].transform.gameObject.GetComponent<Civil>().Death();
+                }
+                    
             }
             timeUntilNextDamage = damageRate;
         }

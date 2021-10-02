@@ -10,7 +10,7 @@ public class DetectionMonstre : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Monster"))
         {
-            parent.GetComponent<AIController>().Fleeing(other.transform.position);
+            parent.GetComponent<CivilAI>().Fleeing(other.transform.position);
         }
     }
 }

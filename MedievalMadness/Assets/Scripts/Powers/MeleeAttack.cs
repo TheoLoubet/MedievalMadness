@@ -16,6 +16,10 @@ public class MeleeAttack : MonoBehaviour
         {
             collision.gameObject.GetComponent<MonsterBase>().TakeDamage(damage);
         }
+        else if (collision.gameObject.CompareTag("Civil"))
+        {
+            collision.gameObject.GetComponent<Civil>().Death();
+        }
 
     }
 }

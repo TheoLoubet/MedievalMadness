@@ -24,17 +24,21 @@ public class MonsterAI : MonoBehaviour
         float minDist = 100;
         currentPos = transform.position;
         goalLocations = GameObject.FindGameObjectsWithTag("Civil");
-        foreach (GameObject o in goalLocations)
-        { 
-            float dist = Vector3.Distance(o.transform.position,currentPos);
-            if(dist < minDist)
+        if (goalLocations.Length != 0)
+        {
+            foreach (GameObject o in goalLocations)
             {
-                oMin = o;
-                minDist = dist;
+                float dist = Vector3.Distance(o.transform.position, currentPos);
+                if (dist < minDist)
+                {
+                    oMin = o;
+                    minDist = dist;
+                }
             }
+            agent.SetDestination(oMin.transform.position);
         }
-        agent.SetDestination(oMin.transform.position);
-        // Rotate civil
+
+        // Rotate monster
         Vector3 direction = agent.velocity.normalized;
         float endAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
         float currentAngle = rb.rotation;
