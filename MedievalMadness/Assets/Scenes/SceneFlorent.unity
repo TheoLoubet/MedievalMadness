@@ -1018,9 +1018,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3940326355920225251, guid: aa3901fea73da6d499c66979c96ec18b,
+    - target: {fileID: 3940326355920225250, guid: aa3901fea73da6d499c66979c96ec18b,
         type: 3}
-      propertyPath: shootAnimation
+      propertyPath: animator
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3940326355920225254, guid: aa3901fea73da6d499c66979c96ec18b,
