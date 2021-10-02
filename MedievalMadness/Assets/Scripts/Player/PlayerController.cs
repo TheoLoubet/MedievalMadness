@@ -35,6 +35,11 @@ public class PlayerController : MonoBehaviour
     private float timeUntilNextLaser = 0f;
 
 
+    // Animation
+    public Animator animator;   // handle all player animations 
+
+
+
     void Update()
     {
         // Shoot
@@ -45,6 +50,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxisRaw("RightTrigger") > 0 && timeUntilNextShoot <= 0 && laser.gameObject.activeSelf == false)
         {
             Shoot();
+            animator.SetBool("IsFiring", true);     // play firing animation
+        }else
+        {
+            animator.SetBool("IsFiring", false);     // stop playing animation
         }
         
         // Slow Zone
@@ -64,7 +73,10 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetButtonDown("MeleeAttack") && timeUntilNextMelee <= 0 && laser.gameObject.activeSelf == false)
         {
-            Melee();
+            animator.SetBool("IsFighting", true);   // play fight animation
+            Invoke("Melee",0.5f);
+            Invoke("stopMeleeAnimation", 0.1f);
+
         }
 
         // Fire Ball
@@ -112,6 +124,10 @@ public class PlayerController : MonoBehaviour
         meleeAttack.transform.parent = this.transform;
 
         timeUntilNextMelee = meleeRate;
+    }
+
+    void stopMeleeAnimation(){
+        animator.SetBool("IsFighting", false);   // stop playing fight animation
     }
 
     void FireBall()
