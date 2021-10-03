@@ -9,6 +9,12 @@ public class Civil : MonoBehaviour
     public GameObject madnessBar;
 
 
+    private void Start() 
+    {
+        AudioManager = GameObject.Find("AudioDeathCivil");
+        madnessBar= GameObject.Find("Madness_Bar");
+    }
+
     private void Awake()
     {
         agent.speed = moveSpeedDefault;

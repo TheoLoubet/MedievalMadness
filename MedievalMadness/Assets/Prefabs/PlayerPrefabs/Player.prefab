@@ -301,6 +301,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dea0419b3b85f2544ad8348fd79a9c36, type: 3}
   - {fileID: 8300000, guid: d642334f89568fa4e8be2b711d765ca6, type: 3}
   - {fileID: 8300000, guid: 4a12a32594466a340afbb0f55fea3392, type: 3}
+  playMadnessSound: 1
   projectilePrefab: {fileID: 2991956194851278345, guid: 9df36c8062a2f8c48858b36729bee225,
     type: 3}
   projectileForce: 30
@@ -350,8 +351,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMadness: 50
   currentMadness: 0
+  minMadness: 0
   madnessDecreasing: 1
-  madnessBarScript: {fileID: 0}
+  madnessBar: {fileID: 0}
+  isMadness: 0
 --- !u!82 &1656070342781675283
 AudioSource:
   m_ObjectHideFlags: 0

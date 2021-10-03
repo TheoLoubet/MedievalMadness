@@ -10,6 +10,7 @@ TagManager:
   - Walls
   - Civil
   - goal
+  - AudioManager
   layers:
   - Default
   - TransparentFX

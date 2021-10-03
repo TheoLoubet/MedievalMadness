@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
     public GameObject madnessBar;
     public bool isMadness = false;
     // Start is called before the first frame update
-    
+    private void Start() 
+    {
+        madnessBar= GameObject.Find("Madness_Bar");
+    }
 
     // Update is called once per frame
     void Update()
