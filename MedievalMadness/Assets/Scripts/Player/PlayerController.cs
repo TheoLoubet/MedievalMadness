@@ -44,14 +44,14 @@ public class PlayerController : MonoBehaviour
     // Animation
     public Animator animator;   // handle all player animations
 
-    // Madness mode
-    private bool isMadness = true;
+    // Madness
+    bool isMadness = false;
 
-    
+
 
     void Update()
     {
-        bool isMadness = GetComponent<Player>().isMadness;
+        isMadness = GetComponent<Player>().isMadness;
 
 
         
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
         {
             timeUntilNextLaser -= Time.deltaTime;
         }
-        if (Input.GetButtonDown("Laser") && timeUntilNextLaser <= 0)
+        if (Input.GetButtonDown("Laser") && timeUntilNextLaser <= 0 && laser.gameObject.activeSelf == false)
         {
             //soundlaser
             audiosources[4].PlayOneShot(audioclips[4],1f);

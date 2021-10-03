@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
 
         if (currentMadness == minMadness)
         {
-            Debug.Log("wesh");
             isMadness = false;
         }
 
