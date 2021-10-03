@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4111044619746842420}
   - component: {fileID: -355288059137646376}
   - component: {fileID: 4037203459389668596}
+  - component: {fileID: -8635922237237790125}
   - component: {fileID: 5492814436403291863}
-  - component: {fileID: 4680551268891611050}
   m_Layer: 6
   m_Name: BigMonster
   m_TagString: Monster
@@ -91,6 +91,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499d3fb834504774f8d06af3965f1d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8635922237237790125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387223033254018714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d46ecc929c5b1a46a49cf9d2a396811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterDeathSound: {fileID: 8300000, guid: 39b1af6bcd3c0854f9387386ec04353a, type: 3}
+  AudioManager: {fileID: 0}
+  agent: {fileID: -355288059137646376}
+  GM: {fileID: 8210970631478830639, guid: 8735ca9f86d70824799ddd0f9a6a634b, type: 3}
+  healthPoint: 10
+  moveSpeedDefault: 2
+  score: 10
 --- !u!58 &5492814436403291863
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -106,26 +125,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.15114148, y: 0.84355354}
   serializedVersion: 2
-  m_Radius: 24.34
---- !u!114 &4680551268891611050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387223033254018714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f70ef89470b0b4792af86580b5e57a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterDeathSound: {fileID: 8300000, guid: 39b1af6bcd3c0854f9387386ec04353a, type: 3}
-  AudioManager: {fileID: 0}
-  agent: {fileID: -355288059137646376}
-  GM: {fileID: 0}
-  healthPoint: 8
-  moveSpeedDefault: 4
-  score: 8
+  m_Radius: 17.755785
 --- !u!1 &8943600534144992762
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +136,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8741147276113110600}
   - component: {fileID: 7014501718708313375}
-  - component: {fileID: 3041545392089168273}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -210,22 +209,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3041545392089168273
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8943600534144992762}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 678a21aed1531eb4184fcaee95677051, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
