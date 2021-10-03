@@ -41,7 +41,10 @@ public class PlayerController : MonoBehaviour
 
 
     // Animation
-    public Animator animator;   // handle all player animations 
+    public Animator animator;   // handle all player animations
+
+    // Madness mode
+    private bool isMadness;
 
     
 
