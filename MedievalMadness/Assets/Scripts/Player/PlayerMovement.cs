@@ -14,19 +14,21 @@ public class PlayerMovement : MonoBehaviour
     private float timeUntilNextDash = 0f;
     private bool isDashing = false;
 
-
-    //audiosources :
-    public AudioSource dash;
-
     // Madness
     bool isMadness = false;
 
+    //TP locations
+    public Transform leftLoc;
+    public Transform upLoc;
+    public Transform rightLoc;
+    public Transform downLoc;
+
     Rigidbody2D rb;
-    CircleCollider2D circleCollider;
 
     Vector2 movementVector;
     Vector2 aimInput;
     Vector2 aimVector;
+
     private void Start() 
     {
         
@@ -35,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
-        circleCollider = this.GetComponent<CircleCollider2D>();
     }
 
     void Update()
@@ -88,6 +89,24 @@ public class PlayerMovement : MonoBehaviour
             Physics2D.IgnoreLayerCollision(6, 8, false);
         }
 
+        if (Input.GetAxisRaw("TpX") > 0)
+        {
+            TPLeft();
+        }
+        if (Input.GetAxisRaw("TpX") < 0)
+        {
+            TPRight();
+        }
+        if (Input.GetAxisRaw("TpY") > 0)
+        {
+            TPDown();
+        }
+        if (Input.GetAxisRaw("TpY") < 0)
+        {
+            TPUp();
+        }
+
+
     }
 
     private void FixedUpdate()
@@ -136,5 +155,25 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = Vector2.zero;
         
         isDashing = false;
+    }
+
+    private void TPLeft()
+    {
+        rb.position = leftLoc.position;
+    }
+
+    private void TPUp()
+    {
+        rb.position = upLoc.position;
+    }
+
+    private void TPRight()
+    {
+        rb.position = rightLoc.position;
+    }
+
+    private void TPDown()
+    {
+        rb.position = downLoc.position;
     }
 }

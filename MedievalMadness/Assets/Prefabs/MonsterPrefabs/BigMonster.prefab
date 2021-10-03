@@ -119,9 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f70ef89470b0b4792af86580b5e57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterDeathSound: {fileID: 0}
+  monsterDeathSound: {fileID: 8300000, guid: 39b1af6bcd3c0854f9387386ec04353a, type: 3}
   AudioManager: {fileID: 0}
-  agent: {fileID: 0}
+  agent: {fileID: -355288059137646376}
   GM: {fileID: 0}
   healthPoint: 8
   moveSpeedDefault: 4
