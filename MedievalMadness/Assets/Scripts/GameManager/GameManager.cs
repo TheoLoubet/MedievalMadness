@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(Monsters[2], spawnPointChoosed.transform);
         }
+        enable = true;
     }
 
 
