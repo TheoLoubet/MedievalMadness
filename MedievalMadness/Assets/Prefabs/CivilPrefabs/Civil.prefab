@@ -87,6 +87,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4637442474906267969}
   moveSpeedDefault: 3
+  deathSound: {fileID: 8300000, guid: d3e505ef4bfcf3444aed6570976fd098, type: 3}
+  AudioManager: {fileID: 0}
 --- !u!50 &3646953480880378034
 Rigidbody2D:
   serializedVersion: 4

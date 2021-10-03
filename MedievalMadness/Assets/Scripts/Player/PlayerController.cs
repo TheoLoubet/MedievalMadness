@@ -6,6 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public Transform firePoint;
 
+    //sound
+    public AudioSource[] audiosources;
+    public AudioClip[] audioclips;
+
+
     // Shoot
     public GameObject projectilePrefab;
     public float projectileForce = 30f;
@@ -38,7 +43,7 @@ public class PlayerController : MonoBehaviour
     // Animation
     public Animator animator;   // handle all player animations 
 
-
+    
 
     void Update()
     {
@@ -96,6 +101,9 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetButtonDown("Laser") && timeUntilNextLaser <= 0)
         {
+            //soundlaser
+            audiosources[4].PlayOneShot(audioclips[4],1f);
+            audiosources[5].Play();
             laser.gameObject.SetActive(true);
             Invoke("StopLaser", laserDuration);
         }
@@ -104,6 +112,9 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
+        //sound
+        audiosources[0].PlayOneShot(audioclips[0],1f);
+
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
         projectileRb.AddForce(firePoint.up * projectileForce, ForceMode2D.Impulse);
@@ -113,6 +124,8 @@ public class PlayerController : MonoBehaviour
 
     void SlowZone()
     {
+        //sound
+        audiosources[2].PlayOneShot(audioclips[2],1f);
         GameObject slowZone = Instantiate(slowZonePrefab, this.transform.position, Quaternion.identity);
 
         timeUntilNextSlowZone = slowZoneRate;
@@ -120,6 +133,8 @@ public class PlayerController : MonoBehaviour
 
     void Melee()
     {
+        //sound
+        audiosources[3].PlayOneShot(audioclips[3],1f);
         GameObject meleeAttack = Instantiate(meleeAttackPrefeb, firePoint.position, firePoint.rotation);
         meleeAttack.transform.parent = this.transform;
 
@@ -132,6 +147,8 @@ public class PlayerController : MonoBehaviour
 
     void FireBall()
     {
+        //sound
+        audiosources[1].PlayOneShot(audioclips[1],1f);
         GameObject fireBall = Instantiate(fireBallPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D fireBallRB = fireBall.GetComponent<Rigidbody2D>();
         fireBallRB.AddForce(firePoint.up * fireBallForce, ForceMode2D.Impulse);
@@ -141,6 +158,7 @@ public class PlayerController : MonoBehaviour
 
     void StopLaser()
     {
+        audiosources[5].Stop();
         laser.gameObject.SetActive(false);
         timeUntilNextLaser = laserRate;
     }

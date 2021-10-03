@@ -3,6 +3,8 @@ using UnityEngine.AI;
 
 public class MonsterBase : MonoBehaviour
 {
+    public AudioClip monsterDeathSound;
+    public GameObject AudioManager;
     public NavMeshAgent agent;
 
     public float healthPoint;
@@ -32,6 +34,7 @@ public class MonsterBase : MonoBehaviour
 
     public void Death()
     {
+        AudioManager.GetComponent<AudioSource>().PlayOneShot(monsterDeathSound,1f);
         Destroy(this.gameObject);
     }
 
