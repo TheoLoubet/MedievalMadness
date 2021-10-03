@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1122992511537080748}
   - component: {fileID: 4111044619746842420}
-  - component: {fileID: 1100012654826800611}
   - component: {fileID: -355288059137646376}
   - component: {fileID: 4037203459389668596}
   - component: {fileID: -8635922237237790125}
+  - component: {fileID: 5492814436403291863}
   m_Layer: 6
-  m_Name: NormalMonster
+  m_Name: BiglMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387223033254018714}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -57,32 +57,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!61 &1100012654826800611
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387223033254018714}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.8709028}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 10.24, y: 10.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 12.87, y: 14.258194}
-  m_EdgeRadius: 0
 --- !u!195 &-355288059137646376
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -92,7 +66,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1387223033254018714}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 5.92
+  m_Radius: 21.5
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -101,8 +75,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 13.57
-  m_BaseOffset: 7.54
+  m_Height: 39.55
+  m_BaseOffset: 19.8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4037203459389668596
@@ -130,8 +104,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -355288059137646376}
-  healthPoint: 4
-  moveSpeedDefault: 5
+  healthPoint: 10
+  moveSpeedDefault: 2
+--- !u!58 &5492814436403291863
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387223033254018714}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.08781433, y: 0.5269368}
+  serializedVersion: 2
+  m_Radius: 19.908802
 --- !u!1 &8943600534144992762
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +194,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: b5a91dbbbe2e0c349aef35e5d3966181, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d78570abebc3fb44a56d8f04fa8ab06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
