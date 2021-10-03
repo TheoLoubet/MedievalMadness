@@ -18,7 +18,7 @@ public class FireBall : MonoBehaviour
             collision.gameObject.GetComponent<Civil>().Death();
         }
         GameObject effect = Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
-        Destroy(effect, 0.1f);
+        //Destroy(effect, 0.1f);
         Destroy(this.gameObject);
     }
 }
