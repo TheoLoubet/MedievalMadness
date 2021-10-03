@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Civil : MonoBehaviour
 {
+    public GameManager GM;
     public NavMeshAgent agent;
     public float moveSpeedDefault = 3;
     public AudioClip deathSound;        
@@ -18,6 +19,7 @@ public class Civil : MonoBehaviour
     {
         madnessBar.GetComponent<MadnessBar>().CivilDeath();
         AudioManager.GetComponent<AudioSource>().PlayOneShot(deathSound,Random.Range(0.1f,0.3f));
+        GM.civilDead();
         Destroy(this.gameObject);
     }
 

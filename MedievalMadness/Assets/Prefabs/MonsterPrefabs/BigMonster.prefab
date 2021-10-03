@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8635922237237790125}
   - component: {fileID: 5492814436403291863}
   m_Layer: 6
-  m_Name: BiglMonster
+  m_Name: BigMonster
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,9 +103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d46ecc929c5b1a46a49cf9d2a396811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterDeathSound: {fileID: 0}
+  AudioManager: {fileID: 0}
   agent: {fileID: -355288059137646376}
+  GM: {fileID: 0}
   healthPoint: 10
   moveSpeedDefault: 2
+  score: 10
 --- !u!58 &5492814436403291863
 CircleCollider2D:
   m_ObjectHideFlags: 0

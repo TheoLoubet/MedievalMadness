@@ -129,9 +129,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d46ecc929c5b1a46a49cf9d2a396811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterDeathSound: {fileID: 0}
+  AudioManager: {fileID: 0}
   agent: {fileID: -355288059137646376}
+  GM: {fileID: 0}
   healthPoint: 4
   moveSpeedDefault: 5
+  score: 5
 --- !u!1 &8943600534144992762
 GameObject:
   m_ObjectHideFlags: 0
