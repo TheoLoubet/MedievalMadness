@@ -5,19 +5,31 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private float timeForWait = 0;
-    public int maxMadness = 50;
-    public int currentMadness;
+    public float maxMadness = 50;
+    public float currentMadness = 0;
+    public float minMadness = 0;
     public float madnessDecreasing = 1;
-    public GameObject madnessBarScript;
+    public GameObject madnessBar;
+    public bool isMadness = false;
     // Start is called before the first frame update
-    void Start()
-    {
-        currentMadness = maxMadness;
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
+        currentMadness = madnessBar.GetComponent<MadnessBar>().getMadness();
+        if (currentMadness == maxMadness)
+        {
+            isMadness = true;
+        }
+
+        if (currentMadness == minMadness)
+        {
+            Debug.Log("wesh");
+            isMadness = false;
+        }
+
+
         timeForWait += Time.deltaTime;
         if (timeForWait > 1)
         {   
@@ -25,9 +37,10 @@ public class Player : MonoBehaviour
             {
                 currentMadness -= 1;
                 timeForWait = 0;
-                madnessBarScript.GetComponent<MadnessBar>().setMadness(currentMadness);
+                madnessBar.GetComponent<MadnessBar>().setMadness(currentMadness);
             }
         }
+
         
 
     }

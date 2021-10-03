@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     //sound
     public AudioSource[] audiosources;
     public AudioClip[] audioclips;
+    public bool playMadnessSound = true;
 
 
     // Shoot
@@ -50,6 +51,25 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        bool isMadness = GetComponent<Player>().isMadness;
+
+
+        
+        //to play sound madness only once
+        if(isMadness == true)
+        {
+            if(playMadnessSound == true)
+            {
+                audiosources[6].PlayOneShot(audioclips[6],1f);
+                playMadnessSound = false;
+            }
+        }
+        if(isMadness == false)
+        {
+            playMadnessSound = true;
+        }
+
+
         // Shoot
         if (timeUntilNextShoot > 0)
         {
