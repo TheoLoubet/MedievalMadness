@@ -6,6 +6,7 @@ public class Civil : MonoBehaviour
     public float moveSpeedDefault = 3;
     public AudioClip deathSound;        
     public GameObject AudioManager;
+    public GameObject madnessBar;
 
 
     private void Awake()
@@ -15,7 +16,7 @@ public class Civil : MonoBehaviour
 
     public void Death()
     {
-
+        madnessBar.GetComponent<MadnessBar>().CivilDeath();
         AudioManager.GetComponent<AudioSource>().PlayOneShot(deathSound,Random.Range(0.1f,0.3f));
         Destroy(this.gameObject);
     }
