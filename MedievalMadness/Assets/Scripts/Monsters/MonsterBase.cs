@@ -11,7 +11,13 @@ public class MonsterBase : MonoBehaviour
     public float healthPoint;
     public float moveSpeedDefault = 5;
     public int score;
-    
+
+
+    private void Start() 
+    {
+        AudioManager = GameObject.Find("AudioDeathMonsters");
+    }
+
     private void Awake()
     {
         agent.speed = moveSpeedDefault;
