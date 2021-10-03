@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     private int score = 0;
     private int civilCount;
-    
+    public DefeatMenu endScreen;
+
     void Start()
     {
         civilCount = GameObject.FindGameObjectsWithTag("Civil").Length;
@@ -35,8 +36,13 @@ public class GameManager : MonoBehaviour
         civilCount--;
         if(civilCount <= 0)
         {
-            Debug.Log("perdu");
+            EndGame();
         }
+    }
+
+    private void EndGame()
+    {
+        endScreen.ShowDefeatMenu(score);
     }
 
 }

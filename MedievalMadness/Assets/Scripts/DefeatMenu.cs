@@ -13,7 +13,7 @@ public class DefeatMenu : MonoBehaviour
     public TextMeshProUGUI ScoreUI;
 
 
-    void ShowDefeatMenu(int score){
+    public void ShowDefeatMenu(int score){
         
         ScoreUI.text = score.ToString();
         DefeatMenuUI.SetActive(true);
