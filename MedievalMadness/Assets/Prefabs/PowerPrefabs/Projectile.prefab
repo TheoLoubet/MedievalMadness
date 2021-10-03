@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6292457571222244316}
   - component: {fileID: 7842296186990079398}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242439295841676834}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1.1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.459, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 0}
   m_Children: []
   m_Father: {fileID: 3413204792697049208}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3039345427146908733}
   - component: {fileID: 4093293497964742389}
   - component: {fileID: -3721962930001402669}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3729449
 --- !u!114 &-3721962930001402669
 MonoBehaviour:
   m_ObjectHideFlags: 0

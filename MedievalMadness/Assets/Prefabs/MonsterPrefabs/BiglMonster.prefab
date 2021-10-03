@@ -44,7 +44,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387223033254018714}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -119,9 +119,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08781433, y: 0.5269368}
+  m_Offset: {x: 0.15114148, y: 0.84355354}
   serializedVersion: 2
-  m_Radius: 19.908802
+  m_Radius: 17.755785
 --- !u!1 &8943600534144992762
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class SlowZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-            collision.gameObject.GetComponent<SmallMonster>().Slow(slowPower);
+            collision.gameObject.GetComponent<MonsterBase>().Slow(slowPower);
         }
         else if (collision.gameObject.CompareTag("Civil"))
         {
@@ -28,7 +28,7 @@ public class SlowZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-            collision.gameObject.GetComponent<SmallMonster>().UnSlow();
+            collision.gameObject.GetComponent<MonsterBase>().UnSlow();
         }
         else if (collision.gameObject.CompareTag("Civil"))
         {

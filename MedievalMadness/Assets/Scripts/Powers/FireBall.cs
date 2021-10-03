@@ -9,19 +9,16 @@ public class FireBall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Projectile") && !collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Monster"))
         {
-            if (collision.gameObject.CompareTag("Monster"))
-            {
-                collision.gameObject.GetComponent<MonsterBase>().TakeDamage(this.damage);
-            }
-            else if (collision.gameObject.CompareTag("Civil"))
-            {
-                collision.gameObject.GetComponent<Civil>().Death();
-            }
-            GameObject effect = Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
-            Destroy(effect, 0.1f);
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<MonsterBase>().TakeDamage(this.damage);
         }
+        else if (collision.gameObject.CompareTag("Civil"))
+        {
+            collision.gameObject.GetComponent<Civil>().Death();
+        }
+        GameObject effect = Instantiate(explosionPrefab, this.transform.position, Quaternion.identity);
+        Destroy(effect, 0.1f);
+        Destroy(this.gameObject);
     }
 }

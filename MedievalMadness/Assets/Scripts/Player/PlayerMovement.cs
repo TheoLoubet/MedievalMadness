@@ -7,14 +7,15 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
 
     // Dash variables
-    public float dashForce = 30f;
-    public float dashRate = 0.5f;
-    public float dashTime = 0.1f;
+    public float dashForce = 35f;
+    public float dashRate = 0.8f;
+    public float dashTime = 0.15f;
     private float timeUntilNextDash = 0f;
     private bool isDashing = false;
 
 
     Rigidbody2D rb;
+    CircleCollider2D circleCollider;
 
     Vector2 movementVector;
     Vector2 aimInput;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        circleCollider = this.GetComponent<CircleCollider2D>();
     }
 
     void Update()
@@ -52,6 +54,17 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("LeftTrigger") > 0 && timeUntilNextDash <= 0)
         {
             Dash(movementVector);
+        }
+
+        if(isDashing)
+        {
+            Physics2D.IgnoreLayerCollision(7, 8, true);
+            Physics2D.IgnoreLayerCollision(6, 8, true);
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(7, 8, false);
+            Physics2D.IgnoreLayerCollision(6, 8, false);
         }
 
     }
@@ -91,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
     private void EndDash()
     {
         rb.velocity = Vector2.zero;
+        
         isDashing = false;
     }
 }

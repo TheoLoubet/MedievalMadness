@@ -19,13 +19,13 @@ public class PlayerController : MonoBehaviour
 
     // MeleeAttack
     public GameObject meleeAttackPrefeb;
-    public float meleeRate = 5f;
+    public float meleeRate = 2f;
     private float timeUntilNextMelee = 0f;
 
     // FireBall
     public GameObject fireBallPrefab;
-    public float fireBallForce = 10f;
-    public float fireBallRate = 5f;
+    public float fireBallForce = 20f;
+    public float fireBallRate = 3f;
     private float timeUntilNextFireBall = 0f;
 
     // Laser

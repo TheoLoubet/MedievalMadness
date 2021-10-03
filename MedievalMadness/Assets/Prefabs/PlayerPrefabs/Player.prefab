@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 3940326355920225252}
   - component: {fileID: 3940326355920225251}
   - component: {fileID: 3940326355920225250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -286,11 +286,11 @@ MonoBehaviour:
   slowZoneRate: 5
   meleeAttackPrefeb: {fileID: 8117919341343864214, guid: 65a3b50b5f9d2034bbe8894507860591,
     type: 3}
-  meleeRate: 1
+  meleeRate: 2
   fireBallPrefab: {fileID: 2090948703310689599, guid: 78809c0b63331b1498d70dd679544940,
     type: 3}
-  fireBallForce: 10
-  fireBallRate: 5
+  fireBallForce: 20
+  fireBallRate: 3
   laser: {fileID: 7488712849980547819}
   laserDuration: 5
   laserRate: 10
@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  dashForce: 30
-  dashRate: 0.5
+  dashForce: 40
+  dashRate: 0.8
   dashTime: 0.1
 --- !u!1 &3940326357181750717
 GameObject:
