@@ -18,7 +18,7 @@ public class MonsterAI : MonoBehaviour
 		agent.updateUpAxis = false;
     }
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         GameObject oMin = null;
         float minDist = 100;

@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        player = GameObject.Find("Player");
         civilCount = GameObject.FindGameObjectsWithTag("Civil").Length;
         waveCompteur = 0;
         
@@ -79,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void civilDead()
     {
-        civilCount--;
+        civilCount-=1;
         if(civilCount <= 0)
         {
             EndGame();

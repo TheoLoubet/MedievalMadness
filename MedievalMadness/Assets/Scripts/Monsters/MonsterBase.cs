@@ -6,7 +6,7 @@ public class MonsterBase : MonoBehaviour
     public AudioClip monsterDeathSound;
     public GameObject AudioManager;
     public NavMeshAgent agent;
-    public GameManager GM;
+    private GameManager GM;
 
     public float healthPoint;
     public float moveSpeedDefault = 5;
@@ -16,6 +16,7 @@ public class MonsterBase : MonoBehaviour
     private void Start() 
     {
         AudioManager = GameObject.Find("AudioDeathMonsters");
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Awake()

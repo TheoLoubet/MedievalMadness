@@ -106,7 +106,7 @@ MonoBehaviour:
   monsterDeathSound: {fileID: 8300000, guid: 39b1af6bcd3c0854f9387386ec04353a, type: 3}
   AudioManager: {fileID: 0}
   agent: {fileID: -355288059137646376}
-  GM: {fileID: 8210970631478830639, guid: 8735ca9f86d70824799ddd0f9a6a634b, type: 3}
+  GM: {fileID: 0}
   healthPoint: 10
   moveSpeedDefault: 2
   score: 10
