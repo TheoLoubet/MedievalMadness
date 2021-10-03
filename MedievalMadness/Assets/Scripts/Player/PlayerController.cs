@@ -47,8 +47,6 @@ public class PlayerController : MonoBehaviour
     // Madness
     bool isMadness = false;
 
-
-
     void Update()
     {
         isMadness = GetComponent<Player>().isMadness;
@@ -92,6 +90,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("SlowZone") && timeUntilNextSlowZone <= 0 && laser.gameObject.activeSelf == false)
         {
             SlowZone();
+            timeUntilNextSlowZone = slowZoneRate;
         }
 
         // Melee Attack
@@ -204,8 +203,6 @@ public class PlayerController : MonoBehaviour
         {
             slowZone.transform.localScale += new Vector3(6f, 6f, 0f);
         }
-
-        timeUntilNextSlowZone = slowZoneRate;
     }
 
     void Melee()
@@ -246,7 +243,22 @@ public class PlayerController : MonoBehaviour
         GameObject fireBall = Instantiate(fireBallPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, Random.Range(-90f, 90f)));
         Rigidbody2D fireBallRB = fireBall.GetComponent<Rigidbody2D>();
         fireBallRB.AddForce(fireBall.transform.up * fireBallForce, ForceMode2D.Impulse);
+    }
 
-        timeUntilNextFireBall = fireBallRate;
+    public bool isFireBallUp()
+    {
+        return timeUntilNextFireBall <= 0;
+    }
+    public bool isMeleeUp()
+    {
+        return timeUntilNextMelee <= 0;
+    }
+    public bool isSlowZoneUp()
+    {
+        return timeUntilNextSlowZone <= 0;
+    }
+    public bool isLaserUp()
+    {
+        return timeUntilNextLaser <= 0;
     }
 }

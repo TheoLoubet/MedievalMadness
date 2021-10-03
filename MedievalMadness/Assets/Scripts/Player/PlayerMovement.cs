@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    private float actualMoveSpeed;
 
     // Dash variables
     public float dashForce = 35f;
@@ -15,10 +16,10 @@ public class PlayerMovement : MonoBehaviour
 
 
     //audiosources :
-    
     public AudioSource dash;
 
-
+    // Madness
+    bool isMadness = false;
 
     Rigidbody2D rb;
     CircleCollider2D circleCollider;
@@ -39,6 +40,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        isMadness = GetComponent<Player>().isMadness;
+        if (isMadness)
+        {
+            actualMoveSpeed = moveSpeed * 1.5f;
+        }
+        else
+        {
+            actualMoveSpeed = moveSpeed;
+
+        }
+
         // Left joystick for movement
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
@@ -89,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         // Move player
         if (!isDashing)
         {
-            rb.MovePosition(rb.position + movementVector * moveSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + movementVector * actualMoveSpeed * Time.fixedDeltaTime);
         }
 
         // Rotate player
@@ -105,7 +117,16 @@ public class PlayerMovement : MonoBehaviour
     {
         isDashing = true;
         rb.AddForce(vector * dashForce, ForceMode2D.Impulse);
-        timeUntilNextDash = dashRate;
+
+        if(!isMadness)
+        {
+            timeUntilNextDash = dashRate;
+        }
+        else
+        {
+            timeUntilNextDash = dashRate/2f;
+        }
+            
 
         Invoke("EndDash", dashTime);
     }
