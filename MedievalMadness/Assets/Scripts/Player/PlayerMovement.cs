@@ -14,12 +14,21 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
 
 
+    //audiosources :
+    
+    public AudioSource dash;
+
+
+
     Rigidbody2D rb;
 
     Vector2 movementVector;
     Vector2 aimInput;
     Vector2 aimVector;
-
+    private void Start() 
+    {
+        
+    }
 
     private void Awake()
     {
