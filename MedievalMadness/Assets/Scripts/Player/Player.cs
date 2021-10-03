@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float minMadness = 0;
     public float madnessDecreasing = 1;
     public GameObject madnessBar;
+    public GameObject madnessAnimation;     // empty object with madness animation
     public bool isMadness = false;
     // Start is called before the first frame update
     private void Start() 
@@ -24,11 +25,14 @@ public class Player : MonoBehaviour
         if (currentMadness == maxMadness)
         {
             isMadness = true;
+            madnessAnimation.SetActive(true);
         }
 
         if (currentMadness == minMadness)
         {
             isMadness = false;
+            madnessAnimation.SetActive(false);
+
         }
 
 
