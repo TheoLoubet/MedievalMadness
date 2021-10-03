@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;   // handle all player animations
 
     // Madness mode
-    private bool isMadness;
+    private bool isMadness = true;
 
     
 
@@ -82,6 +82,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("MeleeAttack") && timeUntilNextMelee <= 0 && laser.gameObject.activeSelf == false)
         {
             animator.SetBool("IsFighting", true);   // play fight animation
+
+            if (!isMadness)
+            {
+                timeUntilNextMelee = meleeRate;
+            }
+            else
+            {
+                timeUntilNextMelee = meleeRate / 2;
+            }
+
             Invoke("Melee",0.5f);
             Invoke("stopMeleeAnimation", 0.1f);
 
@@ -94,7 +104,16 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetButtonDown("FireBall") && timeUntilNextFireBall <= 0 && laser.gameObject.activeSelf == false)
         {
-            FireBall();
+            if (!isMadness)
+            {
+                FireBall();
+            }
+            else
+            {
+                FireBall();
+                Invoke("FireBall", 0.25f);
+                Invoke("FireBall", 0.5f);
+            }
         }
 
         // Laser
@@ -109,6 +128,17 @@ public class PlayerController : MonoBehaviour
             audiosources[5].Play();
             laser.gameObject.SetActive(true);
             Invoke("StopLaser", laserDuration);
+
+            if (isMadness)
+            {
+                SlowZone();
+                FireBallRandom();
+                FireBallRandom();
+                FireBallRandom();
+                FireBallRandom();
+                FireBallRandom();
+            }
+
         }
 
     }
@@ -118,9 +148,28 @@ public class PlayerController : MonoBehaviour
         //sound
         audiosources[0].PlayOneShot(audioclips[0],1f);
 
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
-        projectileRb.AddForce(firePoint.up * projectileForce, ForceMode2D.Impulse);
+        if(!isMadness)
+        {
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+            projectileRb.AddForce(firePoint.up * projectileForce, ForceMode2D.Impulse);
+        }
+        else
+        {
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+            projectileRb.AddForce(firePoint.up * projectileForce, ForceMode2D.Impulse);
+
+            GameObject projectile2 = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, 15));
+            Rigidbody2D projectile2Rb = projectile2.GetComponent<Rigidbody2D>();
+            projectile2Rb.AddForce(projectile2.transform.up * projectileForce, ForceMode2D.Impulse);
+
+            GameObject projectile3 = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, -15));
+            Rigidbody2D projectile3Rb = projectile3.GetComponent<Rigidbody2D>();
+            projectile3Rb.AddForce(projectile3.transform.up * projectileForce, ForceMode2D.Impulse);
+        }
+
+        
 
         timeUntilNextShoot = fireRate;
     }
@@ -129,7 +178,12 @@ public class PlayerController : MonoBehaviour
     {
         //sound
         audiosources[2].PlayOneShot(audioclips[2],1f);
+
         GameObject slowZone = Instantiate(slowZonePrefab, this.transform.position, Quaternion.identity);
+        if(isMadness)
+        {
+            slowZone.transform.localScale += new Vector3(6f, 6f, 0f);
+        }
 
         timeUntilNextSlowZone = slowZoneRate;
     }
@@ -140,8 +194,7 @@ public class PlayerController : MonoBehaviour
         audiosources[3].PlayOneShot(audioclips[3],1f);
         GameObject meleeAttack = Instantiate(meleeAttackPrefeb, firePoint.position, firePoint.rotation);
         meleeAttack.transform.parent = this.transform;
-
-        timeUntilNextMelee = meleeRate;
+       
     }
 
     void stopMeleeAnimation(){
@@ -164,5 +217,16 @@ public class PlayerController : MonoBehaviour
         audiosources[5].Stop();
         laser.gameObject.SetActive(false);
         timeUntilNextLaser = laserRate;
+    }
+
+    void FireBallRandom()
+    {
+        //sound
+        audiosources[1].PlayOneShot(audioclips[1], 1f);
+        GameObject fireBall = Instantiate(fireBallPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, Random.Range(-90f, 90f)));
+        Rigidbody2D fireBallRB = fireBall.GetComponent<Rigidbody2D>();
+        fireBallRB.AddForce(fireBall.transform.up * fireBallForce, ForceMode2D.Impulse);
+
+        timeUntilNextFireBall = fireBallRate;
     }
 }

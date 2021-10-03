@@ -72,7 +72,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 9
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -313,7 +313,7 @@ MonoBehaviour:
   slowZoneRate: 5
   meleeAttackPrefeb: {fileID: 8117919341343864214, guid: 65a3b50b5f9d2034bbe8894507860591,
     type: 3}
-  meleeRate: 1
+  meleeRate: 2
   fireBallPrefab: {fileID: 2090948703310689599, guid: 78809c0b63331b1498d70dd679544940,
     type: 3}
   fireBallForce: 10
