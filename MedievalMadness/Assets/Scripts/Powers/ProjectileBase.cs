@@ -13,7 +13,7 @@ public class ProjectileBase : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Monster"))
             {
-                collision.gameObject.GetComponent<SmallMonster>().TakeDamage(this.damage);
+                collision.gameObject.GetComponent<MonsterBase>().TakeDamage(this.damage);
             }
             else if (collision.gameObject.CompareTag("Civil"))
             {
