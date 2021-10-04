@@ -240,13 +240,17 @@ public class PlayerMovement : MonoBehaviour
     private void TpTo(Vector2 TpLocation)
     {
         Vector3 CurrentLocation = rb.position;
-        rb.position = Vector3.Lerp(CurrentLocation, TpLocation, 0.02f);
+        //float speed = 0.02f;
+        //rb.position = Vector3.Lerp(CurrentLocation, TpLocation, 0.02f);
+        //rb.position = Vector3.Lerp(CurrentLocation, TpLocation, 1 - Mathf.Pow(1 - speed * 3.0f, Time.deltaTime * 60));
 
-        if (Vector2.Distance(rb.position, TpLocation) < 2.0f)
+        /*if (Vector2.Distance(rb.position, TpLocation) < 2.0f)
         {
-            endTP = true;
             
-        }
+            
+        }*/
+        rb.position = TpLocation;
+        endTP = true;
     }
 
     public bool isDashUp()
