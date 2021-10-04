@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Monster").Length == 0)    // if still no monster
         {
             waveCompteur += 1;      // implement wave count
-            Debug.Log(waveCompteur);
+            Debug.Log("Wave number = " + waveCompteur);
             int choiceSpawn = Random.Range(0, spawnPoint.Length -1 );
             this.spawnPointChoosed = spawnPoint[choiceSpawn];
             //to spawn arrow to indicate where monsters spawn
