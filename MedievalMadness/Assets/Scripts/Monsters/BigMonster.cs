@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BigMonster : MonsterBase
 {
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Civil"))
@@ -12,5 +13,7 @@ public class BigMonster : MonsterBase
             Debug.Log("SpawnCloud");
         }
     }
+
+
 
 }

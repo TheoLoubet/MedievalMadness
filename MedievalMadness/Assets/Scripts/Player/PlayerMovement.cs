@@ -64,41 +64,40 @@ public class PlayerMovement : MonoBehaviour
                 movementVector.x = Input.GetAxisRaw("Horizontal");
                 movementVector.y = Input.GetAxisRaw("Vertical");
 
-            }
+                // Right joystick for aiming
 
-            // Right joystick for aiming
-            aimInput.x = Input.GetAxis("Horizontal2");
-            aimInput.y = Input.GetAxis("Vertical2");
+                aimInput.x = Input.GetAxis("Horizontal2");
+                aimInput.y = Input.GetAxis("Vertical2");
 
-            if (aimInput.magnitude >= 0.8)
-            {
-                aimVector.x = aimInput.x;
-                aimVector.y = aimInput.y;
-                aimVector.Normalize();
-            }
+                if (aimInput.magnitude >= 0.8)
+                {
+                    aimVector.x = aimInput.x;
+                    aimVector.y = aimInput.y;
+                    aimVector.Normalize();
+                }
 
-            // Dash
-            if (timeUntilNextDash > 0 && !isDashing)
-            {
-                timeUntilNextDash -= Time.deltaTime;
-            }
+                // Dash
+                if (timeUntilNextDash > 0 && !isDashing)
+                {
+                    timeUntilNextDash -= Time.deltaTime;
+                }
 
-            if (Input.GetAxisRaw("LeftTrigger") > 0 && timeUntilNextDash <= 0)
-            {
-                Dash(movementVector);
-            }
+                if (Input.GetAxisRaw("LeftTrigger") > 0 && timeUntilNextDash <= 0)
+                {
+                    Dash(movementVector);
+                }
 
-            if (isDashing)
-            {
-                Physics2D.IgnoreLayerCollision(7, 8, true);
-                Physics2D.IgnoreLayerCollision(6, 8, true);
+                if (isDashing)
+                {
+                    Physics2D.IgnoreLayerCollision(7, 8, true);
+                    Physics2D.IgnoreLayerCollision(6, 8, true);
+                }
+                else
+                {
+                    Physics2D.IgnoreLayerCollision(7, 8, false);
+                    Physics2D.IgnoreLayerCollision(6, 8, false);
+                }
             }
-            else
-            {
-                Physics2D.IgnoreLayerCollision(7, 8, false);
-                Physics2D.IgnoreLayerCollision(6, 8, false);
-            }
-
             GetTpInput();
             
         }
@@ -189,6 +188,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
 
+
             Physics2D.IgnoreLayerCollision(7, 8, true);
             Physics2D.IgnoreLayerCollision(6, 8, true);
             Physics2D.IgnoreLayerCollision(3, 8, true);
@@ -219,8 +219,17 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Physics2D.IgnoreLayerCollision(7, 8, false);
-            Physics2D.IgnoreLayerCollision(6, 8, false);
+
+            if (isDashing)
+            {
+                Physics2D.IgnoreLayerCollision(7, 8, true);
+                Physics2D.IgnoreLayerCollision(6, 8, true);
+            }
+            else
+            {
+                Physics2D.IgnoreLayerCollision(7, 8, false);
+                Physics2D.IgnoreLayerCollision(6, 8, false);
+            }
             Physics2D.IgnoreLayerCollision(3, 8, false);
 
             TpSprites.SetActive(false);
