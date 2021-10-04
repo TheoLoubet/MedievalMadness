@@ -1229,6 +1229,7 @@ GameObject:
   - component: {fileID: 138775417}
   - component: {fileID: 138775419}
   - component: {fileID: 138775418}
+  - component: {fileID: 138775420}
   m_Layer: 5
   m_Name: topArrow
   m_TagString: Untagged
@@ -1293,6 +1294,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138775416}
   m_CullTransparentMesh: 1
+--- !u!95 &138775420
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138775416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af83da0f137021d46b1e7d5bbf9b9eba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &146179926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637442474906267972, guid: 9bdd8f3586aaf204ea5663fed203f29e,
@@ -1994,6 +2014,7 @@ GameObject:
   - component: {fileID: 206487910}
   - component: {fileID: 206487912}
   - component: {fileID: 206487911}
+  - component: {fileID: 206487913}
   m_Layer: 5
   m_Name: rightArrow
   m_TagString: Untagged
@@ -2058,6 +2079,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206487909}
   m_CullTransparentMesh: 1
+--- !u!95 &206487913
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206487909}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af83da0f137021d46b1e7d5bbf9b9eba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &211688589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,6 +3849,7 @@ GameObject:
   - component: {fileID: 382732626}
   - component: {fileID: 382732628}
   - component: {fileID: 382732627}
+  - component: {fileID: 382732629}
   m_Layer: 5
   m_Name: topArrow2
   m_TagString: Untagged
@@ -3873,6 +3914,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382732625}
   m_CullTransparentMesh: 1
+--- !u!95 &382732629
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382732625}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af83da0f137021d46b1e7d5bbf9b9eba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &394147206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8167,6 +8227,7 @@ GameObject:
   - component: {fileID: 983875952}
   - component: {fileID: 983875954}
   - component: {fileID: 983875953}
+  - component: {fileID: 983875955}
   m_Layer: 5
   m_Name: botArrow2
   m_TagString: Untagged
@@ -8231,6 +8292,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983875951}
   m_CullTransparentMesh: 1
+--- !u!95 &983875955
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983875951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af83da0f137021d46b1e7d5bbf9b9eba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &998440282
 GameObject:
   m_ObjectHideFlags: 0
@@ -8242,6 +8322,7 @@ GameObject:
   - component: {fileID: 998440283}
   - component: {fileID: 998440285}
   - component: {fileID: 998440284}
+  - component: {fileID: 998440286}
   m_Layer: 5
   m_Name: leftArrow
   m_TagString: Untagged
@@ -8306,6 +8387,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998440282}
   m_CullTransparentMesh: 1
+--- !u!95 &998440286
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998440282}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af83da0f137021d46b1e7d5bbf9b9eba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1000946285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12287,6 +12387,7 @@ GameObject:
   - component: {fileID: 1395616413}
   - component: {fileID: 1395616415}
   - component: {fileID: 1395616414}
+  - component: {fileID: 1395616416}
   m_Layer: 5
   m_Name: botArrow
   m_TagString: Untagged
@@ -12351,6 +12452,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395616412}
   m_CullTransparentMesh: 1
+--- !u!95 &1395616416
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395616412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af83da0f137021d46b1e7d5bbf9b9eba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1401155315
 GameObject:
   m_ObjectHideFlags: 0
