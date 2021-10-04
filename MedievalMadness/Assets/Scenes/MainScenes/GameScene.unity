@@ -834,6 +834,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1581063704}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &75547525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3940326355920225250, guid: aa3901fea73da6d499c66979c96ec18b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1581063704}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75547515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be79ffc82159e34787a74d295b14323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &75547526 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3940326355920225251, guid: aa3901fea73da6d499c66979c96ec18b,
@@ -8101,7 +8113,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 2829290a3bf0c5f4f91a485f8cebee88, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5691d3415d4aa614ea6820eebabc2aff, type: 2}
 --- !u!4 &977703950
 Transform:
   m_ObjectHideFlags: 0
@@ -17949,11 +17961,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2027568954}
     m_Modifications:
+    - target: {fileID: 667313110718686460, guid: 0829cc1a699750c4ea72b56a2efa19d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -88.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 667313110718686460, guid: 0829cc1a699750c4ea72b56a2efa19d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 38.9
+      objectReference: {fileID: 0}
     - target: {fileID: 6003815754060888917, guid: 0829cc1a699750c4ea72b56a2efa19d9,
         type: 3}
       propertyPath: pc
       value: 
       objectReference: {fileID: 75547526}
+    - target: {fileID: 6003815754060888917, guid: 0829cc1a699750c4ea72b56a2efa19d9,
+        type: 3}
+      propertyPath: pm
+      value: 
+      objectReference: {fileID: 75547525}
     - target: {fileID: 6003815754060888918, guid: 0829cc1a699750c4ea72b56a2efa19d9,
         type: 3}
       propertyPath: m_Pivot.x
@@ -18073,6 +18100,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CoolDowns
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237209962733321853, guid: 0829cc1a699750c4ea72b56a2efa19d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -51.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237209962733321853, guid: 0829cc1a699750c4ea72b56a2efa19d9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 38.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0829cc1a699750c4ea72b56a2efa19d9, type: 3}
