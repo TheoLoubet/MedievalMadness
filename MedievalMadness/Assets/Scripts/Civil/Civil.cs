@@ -13,6 +13,8 @@ public class Civil : MonoBehaviour
     public GameObject madnessBar;           // link to the madness bar to increase
 
     private bool isDead = false;            // insure civil dies only once
+
+    public GameObject bloodStain;
         
 
 
@@ -39,6 +41,9 @@ public class Civil : MonoBehaviour
             madnessBar.GetComponent<MadnessBar>().CivilDeath();                                             // notify to MadnessBar that a Civil is dead
             AudioManager.GetComponent<AudioSource>().PlayOneShot(deathSound, Random.Range(0.1f, 0.3f));       // play death sound
             GM.civilDead();                                                                                 // notify that the civil is dead
+
+            Instantiate(bloodStain, this.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
+
             Destroy(this.gameObject);
         }
 

@@ -17,7 +17,7 @@ public class ProjectileBase : MonoBehaviour
         {
             collision.gameObject.GetComponent<Civil>().Death();
         }
-            GameObject effect = Instantiate(hitEffect, this.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)) /*or Quaternion.identity pour rotation nulle*/);
+        GameObject effect = Instantiate(hitEffect, this.transform.position, Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)) /*or Quaternion.identity pour rotation nulle*/);
         Destroy(effect, 0.2f);
         Destroy(this.gameObject);
     }

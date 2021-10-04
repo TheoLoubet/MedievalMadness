@@ -85,10 +85,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba6adf8daea8ce419eec67ef2ad2df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GM: {fileID: 0}
   agent: {fileID: 4637442474906267969}
   moveSpeedDefault: 3
   deathSound: {fileID: 8300000, guid: d3e505ef4bfcf3444aed6570976fd098, type: 3}
   AudioManager: {fileID: 0}
+  madnessBar: {fileID: 0}
+  bloodStain: {fileID: 3893470443553556009, guid: 82e3861894e460c40954b58cc1ee34e1,
+    type: 3}
 --- !u!50 &3646953480880378034
 Rigidbody2D:
   serializedVersion: 4
