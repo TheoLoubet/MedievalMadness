@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     bool isMadness = false;
 
     //TP locations
+    private bool endTP = true;
+    private int Tp_ID = 0;
+    public GameObject TpSprites;
+    public GameObject BodySprites;
     public Transform leftLoc;
     public Transform upLoc;
     public Transform rightLoc;
@@ -93,20 +97,59 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetAxisRaw("TpX") > 0)
             {
-                TPLeft();
+                Tp_ID = 0;  // Left
+                endTP = false;
             }
             if (Input.GetAxisRaw("TpX") < 0)
             {
-                TPRight();
+                Tp_ID = 1; // Right
+                endTP = false;
             }
             if (Input.GetAxisRaw("TpY") > 0)
             {
-                TPDown();
+                Tp_ID = 2;  // Down
+                endTP = false;
             }
             if (Input.GetAxisRaw("TpY") < 0)
             {
-                TPUp();
+                Tp_ID = 3;  // UP
+                endTP = false;
             }
+        }
+
+
+
+        //--- 
+        if (!endTP)
+        {
+            TpSprites.SetActive(true);
+            BodySprites.SetActive(false);
+            switch (Tp_ID)
+            {
+                case 0:
+                    TpTo(leftLoc.position);
+                    break;
+
+                case 1:
+                    TpTo(rightLoc.position);
+                    break;
+
+                case 2:
+                    TpTo(downLoc.position);
+                    break;
+
+                case 3:
+                    TpTo(upLoc.position);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            TpSprites.SetActive(false);
+            BodySprites.SetActive(true);
         }
 
     }
@@ -159,25 +202,19 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
     }
 
-    private void TPLeft()
+
+    private void TpTo(Vector2 TpLocation)
     {
-        rb.position = leftLoc.position;
+        Vector3 CurrentLocation = rb.position;
+        rb.position = Vector3.Lerp(CurrentLocation, TpLocation, 0.02f);
+
+        if (Vector2.Distance(rb.position, TpLocation) < 2.0f)
+        {
+            endTP = true;
+            
+        }
     }
 
-    private void TPUp()
-    {
-        rb.position = upLoc.position;
-    }
-
-    private void TPRight()
-    {
-        rb.position = rightLoc.position;
-    }
-
-    private void TPDown()
-    {
-        rb.position = downLoc.position;
-    }
     public bool isDashUp()
     {
         return timeUntilNextDash <= 0;
