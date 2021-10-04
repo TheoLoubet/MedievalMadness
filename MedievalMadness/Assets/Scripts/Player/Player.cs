@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
 
         }
 
+        madnessBar.GetComponent<MadnessBar>().setIsMadness(isMadness);
 
         madnessDecreaseTime += Time.deltaTime;
         if (madnessDecreaseTime > 1f)

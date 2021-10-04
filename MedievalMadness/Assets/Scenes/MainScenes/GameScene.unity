@@ -489,12 +489,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdd8f3586aaf204ea5663fed203f29e, type: 3}
---- !u!1 &9729407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3182654580667731051, guid: afb73c1459663bd4399c99ee8b1dea9a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1786588025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &13558408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637442474906267972, guid: 9bdd8f3586aaf204ea5663fed203f29e,
@@ -7940,12 +7934,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 321937394}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &944474935 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8440030910918001352, guid: 8735ca9f86d70824799ddd0f9a6a634b,
-    type: 3}
-  m_PrefabInstance: {fileID: 8210970632569917234}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &945455724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637442474906267972, guid: 9bdd8f3586aaf204ea5663fed203f29e,
@@ -8113,7 +8101,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: e1ba342108d0cf240abd9ccf42656eb1, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 2829290a3bf0c5f4f91a485f8cebee88, type: 2}
 --- !u!4 &977703950
 Transform:
   m_ObjectHideFlags: 0
@@ -9672,12 +9660,12 @@ PrefabInstance:
     - target: {fileID: 2951518977053085291, guid: 17a492d218eb663469ee55479a9b52b1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 266
+      value: 389
       objectReference: {fileID: 0}
     - target: {fileID: 2951518977053085291, guid: 17a492d218eb663469ee55479a9b52b1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -42
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2951518977053085292, guid: 17a492d218eb663469ee55479a9b52b1,
         type: 3}
@@ -18272,19 +18260,14 @@ PrefabInstance:
       objectReference: {fileID: 324026386}
     - target: {fileID: 8210970631478830639, guid: 8735ca9f86d70824799ddd0f9a6a634b,
         type: 3}
-      propertyPath: audiosource
-      value: 
-      objectReference: {fileID: 944474935}
-    - target: {fileID: 8210970631478830639, guid: 8735ca9f86d70824799ddd0f9a6a634b,
-        type: 3}
       propertyPath: NPCAliveText
       value: 
       objectReference: {fileID: 1499479030}
     - target: {fileID: 8210970631478830639, guid: 8735ca9f86d70824799ddd0f9a6a634b,
         type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 9729407}
+      propertyPath: arrows.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8210970631478830639, guid: 8735ca9f86d70824799ddd0f9a6a634b,
         type: 3}
       propertyPath: arrows.Array.data[0]
