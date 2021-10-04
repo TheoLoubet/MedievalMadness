@@ -59,8 +59,12 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // Left joystick for movement
-            movementVector.x = Input.GetAxisRaw("Horizontal");
-            movementVector.y = Input.GetAxisRaw("Vertical");
+            if (endTP)
+            {
+                movementVector.x = Input.GetAxisRaw("Horizontal");
+                movementVector.y = Input.GetAxisRaw("Vertical");
+
+            }
 
             // Right joystick for aiming
             aimInput.x = Input.GetAxis("Horizontal2");
@@ -95,62 +99,14 @@ public class PlayerMovement : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(6, 8, false);
             }
 
-            if (Input.GetAxisRaw("TpX") > 0)
-            {
-                Tp_ID = 0;  // Left
-                endTP = false;
-            }
-            if (Input.GetAxisRaw("TpX") < 0)
-            {
-                Tp_ID = 1; // Right
-                endTP = false;
-            }
-            if (Input.GetAxisRaw("TpY") > 0)
-            {
-                Tp_ID = 2;  // Down
-                endTP = false;
-            }
-            if (Input.GetAxisRaw("TpY") < 0)
-            {
-                Tp_ID = 3;  // UP
-                endTP = false;
-            }
+            GetTpInput();
+            
         }
 
 
 
         //--- 
-        if (!endTP)
-        {
-            TpSprites.SetActive(true);
-            BodySprites.SetActive(false);
-            switch (Tp_ID)
-            {
-                case 0:
-                    TpTo(leftLoc.position);
-                    break;
-
-                case 1:
-                    TpTo(rightLoc.position);
-                    break;
-
-                case 2:
-                    TpTo(downLoc.position);
-                    break;
-
-                case 3:
-                    TpTo(upLoc.position);
-                    break;
-
-                default:
-                    break;
-            }
-        }
-        else
-        {
-            TpSprites.SetActive(false);
-            BodySprites.SetActive(true);
-        }
+        HandleTp();
 
     }
 
@@ -202,6 +158,65 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
     }
 
+
+    private void GetTpInput()
+    {
+        if (Input.GetAxisRaw("TpX") > 0)
+        {
+            Tp_ID = 0;  // Left
+            endTP = false;
+        }
+        if (Input.GetAxisRaw("TpX") < 0)
+        {
+            Tp_ID = 1; // Right
+            endTP = false;
+        }
+        if (Input.GetAxisRaw("TpY") > 0)
+        {
+            Tp_ID = 2;  // Down
+            endTP = false;
+        }
+        if (Input.GetAxisRaw("TpY") < 0)
+        {
+            Tp_ID = 3;  // UP
+            endTP = false;
+        }
+    }
+
+    private void HandleTp()
+    {
+        if (!endTP)
+        {
+            TpSprites.SetActive(true);
+            BodySprites.SetActive(false);
+            switch (Tp_ID)
+            {
+                case 0:
+                    TpTo(leftLoc.position);
+                    break;
+
+                case 1:
+                    TpTo(rightLoc.position);
+                    break;
+
+                case 2:
+                    TpTo(downLoc.position);
+                    break;
+
+                case 3:
+                    TpTo(upLoc.position);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            TpSprites.SetActive(false);
+            BodySprites.SetActive(true);
+        }
+    }
 
     private void TpTo(Vector2 TpLocation)
     {
