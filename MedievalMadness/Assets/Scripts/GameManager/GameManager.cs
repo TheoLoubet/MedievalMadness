@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         this.scoreText.text = this.score.ToString();            // update score on screen
-        this.NPCAliveText.text = this.civilCount.ToString();    // update npc alive on screen
+        this.NPCAliveText.text = this.civilCount.ToString() + " / 100";    // update npc alive on screen
 
         //lanceur de nouvelle vague
         if (GameObject.FindGameObjectsWithTag("Monster").Length == 0)    // if still no monster
