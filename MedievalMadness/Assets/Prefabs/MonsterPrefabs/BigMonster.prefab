@@ -106,7 +106,6 @@ MonoBehaviour:
   monsterDeathSound: {fileID: 8300000, guid: 39b1af6bcd3c0854f9387386ec04353a, type: 3}
   AudioManager: {fileID: 0}
   agent: {fileID: -355288059137646376}
-  GM: {fileID: 0}
   healthPoint: 10
   moveSpeedDefault: 2
   score: 10
@@ -136,6 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8741147276113110600}
   - component: {fileID: 7014501718708313375}
+  - component: {fileID: 7404103312841924669}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -209,3 +209,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7404103312841924669
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8943600534144992762}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 678a21aed1531eb4184fcaee95677051, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
