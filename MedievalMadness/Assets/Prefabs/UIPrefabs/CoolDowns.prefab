@@ -679,11 +679,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pc: {fileID: 0}
+  pm: {fileID: 0}
   fireBallImage: {fileID: 6003815754225840434}
   meleeImage: {fileID: 6003815752546175866}
   slowZoneImage: {fileID: 6003815753153397347}
   laserImage: {fileID: 6003815754422875504}
-  Dash: {fileID: 3072638149678072801}
+  dashImage: {fileID: 3072638149678072801}
 --- !u!1 &6003815754225840444
 GameObject:
   m_ObjectHideFlags: 0
