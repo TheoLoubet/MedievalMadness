@@ -187,6 +187,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!endTP)
         {
+
+
+            Physics2D.IgnoreLayerCollision(7, 8, true);
+            Physics2D.IgnoreLayerCollision(6, 8, true);
+            Physics2D.IgnoreLayerCollision(3, 8, true);
+
             TpSprites.SetActive(true);
             BodySprites.SetActive(false);
             switch (Tp_ID)
@@ -213,6 +219,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            Physics2D.IgnoreLayerCollision(7, 8, false);
+            Physics2D.IgnoreLayerCollision(6, 8, false);
+            Physics2D.IgnoreLayerCollision(3, 8, false);
+
             TpSprites.SetActive(false);
             BodySprites.SetActive(true);
         }
