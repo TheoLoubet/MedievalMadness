@@ -178,4 +178,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.position = downLoc.position;
     }
+    public bool isDashUp()
+    {
+        return timeUntilNextDash <= 0;
+    }
 }
