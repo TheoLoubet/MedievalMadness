@@ -11,16 +11,18 @@ public class Civil : MonoBehaviour
     public GameObject AudioManager;         // audio manager
 
     public GameObject madnessBar;           // link to the madness bar to increase
+
+    private bool isDead = false;            // insure civil dies only once
         
 
 
     private void Start() 
     {
         AudioManager = GameObject.Find("AudioDeathCivil");  // access to the Audio manager
-        if(!AudioManager) { Debug.Log("ERROR, NO AUDIO MANAGER IN CIVILs"); }
+        if(!AudioManager) { Debug.Log("ERROR, NO AUDIO MANAGER IN CIVILS"); }
 
         madnessBar= GameObject.Find("Madness_Bar");         // access to the Madness bar
-        if (!madnessBar) { Debug.Log("ERROR, NO MADNESS BAR IN CIVILs"); }
+        if (!madnessBar) { Debug.Log("ERROR, NO MADNESS BAR IN CIVILS"); }
 
     }
 
@@ -31,15 +33,20 @@ public class Civil : MonoBehaviour
 
     public void Death()
     {
-        madnessBar.GetComponent<MadnessBar>().CivilDeath();                                             // notify to MadnessBar that a Civil is dead
-        AudioManager.GetComponent<AudioSource>().PlayOneShot(deathSound,Random.Range(0.1f,0.3f));       // play death sound
-        GM.civilDead();                                                                                 // notify that the civil is dead
-        Destroy(this.gameObject);
+        if (!isDead)
+        {
+            isDead = true;
+            madnessBar.GetComponent<MadnessBar>().CivilDeath();                                             // notify to MadnessBar that a Civil is dead
+            AudioManager.GetComponent<AudioSource>().PlayOneShot(deathSound, Random.Range(0.1f, 0.3f));       // play death sound
+            GM.civilDead();                                                                                 // notify that the civil is dead
+            Destroy(this.gameObject);
+        }
+
     }
 
     public void SpeedUp(float power)
     {
-        agent.speed = agent.speed * power;  // upgrade the speed of the civil
+        agent.speed = agent.speed * power;  // increase the speed of the civil
     }
 
     public void SpeedDown()

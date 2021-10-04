@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireBallExplosion : MonoBehaviour
 {
-    public float damage = 4;
+    public float damage = 3;
     private bool dealDamage = true;
 
     private void Start()

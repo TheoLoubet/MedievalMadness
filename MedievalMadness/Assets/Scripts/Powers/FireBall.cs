@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireBall : MonoBehaviour
 {
     public GameObject explosionPrefab;
-    public float damage = 2;
+    public float damage = 7;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

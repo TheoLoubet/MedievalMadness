@@ -9,7 +9,7 @@ public class Laser : MonoBehaviour
 
     public float damage = 1;
 
-    public float damageRate = 0.2f;
+    public float damageRate = 0.1f;
     private float timeUntilNextDamage = 0f;
 
 
@@ -25,7 +25,7 @@ public class Laser : MonoBehaviour
     void Update()
     {
         // Draw
-        RaycastHit2D positionHit = Physics2D.Raycast(this.transform.position, this.transform.up, 100f, wallLayer);
+        RaycastHit2D positionHit = Physics2D.Raycast(this.transform.position, this.transform.up, 200f, wallLayer);
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, positionHit.point);
 
@@ -36,7 +36,7 @@ public class Laser : MonoBehaviour
         }
         if (timeUntilNextDamage <= 0)
         {
-            ennemyHits = Physics2D.RaycastAll(this.transform.position, this.transform.up, 100f, hitLayer);
+            ennemyHits = Physics2D.RaycastAll(this.transform.position, this.transform.up, 200f, hitLayer);
 
 
             for (int i = 0; i < ennemyHits.Length; i++)

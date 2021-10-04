@@ -49,115 +49,119 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        isMadness = GetComponent<Player>().isMadness;
-
-
-        
-        //to play sound madness only once
-        if(isMadness == true)
+        if(Time.timeScale != 0)
         {
-            if(playMadnessSound == true)
+            isMadness = GetComponent<Player>().isMadness;
+
+
+
+            //to play sound madness only once
+            if (isMadness == true)
             {
-                audiosources[6].PlayOneShot(audioclips[6],1f);
-                playMadnessSound = false;
+                if (playMadnessSound == true)
+                {
+                    audiosources[6].PlayOneShot(audioclips[6], 1f);
+                    playMadnessSound = false;
+                }
             }
-        }
-        if(isMadness == false)
-        {
-            playMadnessSound = true;
-        }
-
-
-        // Shoot
-        if (timeUntilNextShoot > 0)
-        {
-            timeUntilNextShoot -= Time.deltaTime;
-        }
-        if (Input.GetAxisRaw("RightTrigger") > 0 && timeUntilNextShoot <= 0 && laser.gameObject.activeSelf == false)
-        {
-            Shoot();
-            animator.SetBool("IsFiring", true);     // play firing animation
-        }else
-        {
-            animator.SetBool("IsFiring", false);     // stop playing animation
-        }
-        
-        // Slow Zone
-        if (timeUntilNextSlowZone > 0)
-        {
-            timeUntilNextSlowZone -= Time.deltaTime;
-        }
-        if (Input.GetButtonDown("SlowZone") && timeUntilNextSlowZone <= 0 && laser.gameObject.activeSelf == false)
-        {
-            SlowZone();
-            timeUntilNextSlowZone = slowZoneRate;
-        }
-
-        // Melee Attack
-        if (timeUntilNextMelee > 0)
-        {
-            timeUntilNextMelee -= Time.deltaTime;
-        }
-        if (Input.GetButtonDown("MeleeAttack") && timeUntilNextMelee <= 0 && laser.gameObject.activeSelf == false)
-        {
-            animator.SetBool("IsFighting", true);   // play fight animation
-
-            if (!isMadness)
+            if (isMadness == false)
             {
-                timeUntilNextMelee = meleeRate;
+                playMadnessSound = true;
+            }
+
+
+            // Shoot
+            if (timeUntilNextShoot > 0)
+            {
+                timeUntilNextShoot -= Time.deltaTime;
+            }
+            if (Input.GetAxisRaw("RightTrigger") > 0 && timeUntilNextShoot <= 0 && laser.gameObject.activeSelf == false)
+            {
+                Shoot();
+                animator.SetBool("IsFiring", true);     // play firing animation
             }
             else
             {
-                timeUntilNextMelee = meleeRate / 2;
+                animator.SetBool("IsFiring", false);     // stop playing animation
             }
 
-            Invoke("Melee",0.5f);
-            Invoke("stopMeleeAnimation", 0.1f);
-
-        }
-
-        // Fire Ball
-        if (timeUntilNextFireBall > 0)
-        {
-            timeUntilNextFireBall -= Time.deltaTime;
-        }
-        if (Input.GetButtonDown("FireBall") && timeUntilNextFireBall <= 0 && laser.gameObject.activeSelf == false)
-        {
-            if (!isMadness)
+            // Slow Zone
+            if (timeUntilNextSlowZone > 0)
             {
-                FireBall();
+                timeUntilNextSlowZone -= Time.deltaTime;
             }
-            else
-            {
-                FireBall();
-                Invoke("FireBall", 0.25f);
-                Invoke("FireBall", 0.5f);
-            }
-        }
-
-        // Laser
-        if (timeUntilNextLaser > 0)
-        {
-            timeUntilNextLaser -= Time.deltaTime;
-        }
-        if (Input.GetButtonDown("Laser") && timeUntilNextLaser <= 0 && laser.gameObject.activeSelf == false)
-        {
-            //soundlaser
-            audiosources[4].PlayOneShot(audioclips[4],1f);
-            audiosources[5].Play();
-            laser.gameObject.SetActive(true);
-            Invoke("StopLaser", laserDuration);
-
-            if (isMadness)
+            if (Input.GetButtonDown("SlowZone") && timeUntilNextSlowZone <= 0 && laser.gameObject.activeSelf == false)
             {
                 SlowZone();
-                FireBallRandom();
-                FireBallRandom();
-                FireBallRandom();
-                FireBallRandom();
-                FireBallRandom();
+                timeUntilNextSlowZone = slowZoneRate;
             }
 
+            // Melee Attack
+            if (timeUntilNextMelee > 0)
+            {
+                timeUntilNextMelee -= Time.deltaTime;
+            }
+            if (Input.GetButtonDown("MeleeAttack") && timeUntilNextMelee <= 0 && laser.gameObject.activeSelf == false)
+            {
+                animator.SetBool("IsFighting", true);   // play fight animation
+
+                if (!isMadness)
+                {
+                    timeUntilNextMelee = meleeRate;
+                }
+                else
+                {
+                    timeUntilNextMelee = meleeRate / 2;
+                }
+
+                Invoke("Melee", 0.5f);
+                Invoke("stopMeleeAnimation", 0.1f);
+
+            }
+
+            // Fire Ball
+            if (timeUntilNextFireBall > 0)
+            {
+                timeUntilNextFireBall -= Time.deltaTime;
+            }
+            if (Input.GetButtonDown("FireBall") && timeUntilNextFireBall <= 0 && laser.gameObject.activeSelf == false)
+            {
+                if (!isMadness)
+                {
+                    FireBall();
+                }
+                else
+                {
+                    FireBall();
+                    Invoke("FireBall", 0.25f);
+                    Invoke("FireBall", 0.5f);
+                }
+            }
+
+            // Laser
+            if (timeUntilNextLaser > 0)
+            {
+                timeUntilNextLaser -= Time.deltaTime;
+            }
+            if (Input.GetButtonDown("Laser") && timeUntilNextLaser <= 0 && laser.gameObject.activeSelf == false)
+            {
+                //soundlaser
+                audiosources[4].PlayOneShot(audioclips[4], 1f);
+                audiosources[5].Play();
+                laser.gameObject.SetActive(true);
+                Invoke("StopLaser", laserDuration);
+
+                if (isMadness)
+                {
+                    SlowZone();
+                    FireBallRandom();
+                    FireBallRandom();
+                    FireBallRandom();
+                    FireBallRandom();
+                    FireBallRandom();
+                }
+
+            }
         }
 
     }

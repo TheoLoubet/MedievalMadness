@@ -78,8 +78,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   scoreText: {fileID: 0}
+  NPCAliveText: {fileID: 0}
+  endScreen: {fileID: 0}
   waveCompteur: 0
-  enable: 1
+  MonsterFromPreviousWaveSpawned: 1
   spawnable: 0
   spawnPoint:
   - {fileID: 8210970632922164745}
@@ -89,6 +91,10 @@ MonoBehaviour:
   - {fileID: 1387223033254018714, guid: 899e77b779cfa614688d077fd7e750fb, type: 3}
   - {fileID: 1387223033254018714, guid: 88545b3d81b9fc44fb11bec906ec28e0, type: 3}
   - {fileID: 1387223033254018714, guid: 906c7d4706332cc489e88dd8f10d618d, type: 3}
+  arrows:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8210970632044055828
 GameObject:
   m_ObjectHideFlags: 0

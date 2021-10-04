@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
 {
-    public float damage = 3;
+    public float damage = 10;
 
     private void Start()
     {

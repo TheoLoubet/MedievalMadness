@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SlowZone : MonoBehaviour
 {
-    public float slowPower = 0.5f;
-    public float speedPower = 1.5f;
+    public float slowPower = 0.2f;
+    public float speedPower = 2f;
     public float duration = 5f;
 
     private void Start()

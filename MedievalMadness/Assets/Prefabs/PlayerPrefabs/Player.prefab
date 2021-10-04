@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2723971767379374580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.31, z: 0}
+  m_LocalPosition: {x: 0, y: 0.51, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 3940326355920225254}
@@ -159,7 +159,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   damage: 1
-  damageRate: 0.2
+  damageRate: 0.1
 --- !u!1 &3940326355876292099
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,11 +333,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be79ffc82159e34787a74d295b14323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 8
   dashForce: 40
   dashRate: 1
   dashTime: 0.1
-  dash: {fileID: 0}
+  leftLoc: {fileID: 0}
+  upLoc: {fileID: 0}
+  rightLoc: {fileID: 0}
+  downLoc: {fileID: 0}
 --- !u!114 &7991382793242139555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,10 +353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35a0e7757004b64ba495e8f2ae0382f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMadness: 50
+  maxMadness: 100
   currentMadness: 0
   minMadness: 0
-  madnessDecreasing: 1
   madnessBar: {fileID: 0}
   madnessAnimation: {fileID: 7462168789353471307}
   isMadness: 0
@@ -370,7 +372,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: e78e3c21473406c4c97dca70340027ec, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -467,7 +469,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d9ef484e8c581ea4ab9dc5c134295b6e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -564,7 +566,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 61d538af0455751468e5723bf6572dcb, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -661,7 +663,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: e77aafc5a2c8d9b42ba39f69dc8a5fd1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -758,7 +760,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: dea0419b3b85f2544ad8348fd79a9c36, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -855,7 +857,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d642334f89568fa4e8be2b711d765ca6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -952,7 +954,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 4a12a32594466a340afbb0f55fea3392, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1108,7 +1110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: a257c13666d7df144b7857e90fc55798, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -9,7 +9,7 @@ public class MonsterBase : MonoBehaviour
     private GameManager GM;
 
     public float healthPoint;
-    public float moveSpeedDefault = 5;
+    public float moveSpeedDefault;
     public int score;
 
 

@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 2090948703310689599, guid: fcd6c6cb182ebad4ca1d8829869644de,
     type: 3}
-  damage: 2
+  damage: 7
 --- !u!1 &3962441766683466194
 GameObject:
   m_ObjectHideFlags: 0

@@ -151,10 +151,9 @@ MonoBehaviour:
   monsterDeathSound: {fileID: 8300000, guid: 39b1af6bcd3c0854f9387386ec04353a, type: 3}
   AudioManager: {fileID: 0}
   agent: {fileID: -355288059137646376}
-  GM: {fileID: 0}
-  healthPoint: 2
+  healthPoint: 3
   moveSpeedDefault: 8
-  score: 1
+  score: 2
 --- !u!195 &-355288059137646376
 NavMeshAgent:
   m_ObjectHideFlags: 0
