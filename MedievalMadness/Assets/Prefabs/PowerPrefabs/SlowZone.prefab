@@ -116,4 +116,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowPower: 0.2
   speedPower: 2
-  duration: 5
+  duration: 3

@@ -4,7 +4,7 @@ public class SlowZone : MonoBehaviour
 {
     public float slowPower = 0.2f;
     public float speedPower = 2f;
-    public float duration = 5f;
+    public float duration = 3f;
 
     private void Start()
     {

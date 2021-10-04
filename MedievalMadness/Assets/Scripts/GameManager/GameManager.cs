@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
         arrows[0].SetActive(false);
         arrows[1].SetActive(false);
         arrows[2].SetActive(false);
+        arrows[3].SetActive(false);
+        arrows[4].SetActive(false);
+        arrows[5].SetActive(false);
     }
     // spawn monster
     private void SpawnMonster()
