@@ -10,15 +10,19 @@ public class GameManager : MonoBehaviour
     public Text scoreText;          // Score to print on the screen during playing
     public Text NPCAliveText;       // NPC Alive to print on the screen during playing
     public DefeatMenu endScreen;    // end screen to show at the end
+    private AudioSource audiosource;      // end audio
     public int waveCompteur;        // wave count
     public bool MonsterFromPreviousWaveSpawned = true;  
     public bool spawnable = false;
+    public GameObject audioManager;
+    private GameObject spawnPointChoosed;
 
     public GameObject[] spawnPoint; // array of spawn points
     public GameObject[] Monsters;   // array of monster
     public GameObject[] arrows;
     void Start()
     {
+        audiosource = GetComponent<AudioSource>();
         civilCount = GameObject.FindGameObjectsWithTag("Civil").Length;     // get the number of Civil
         waveCompteur = 0;                                                   // set wave count to 0
         Debug.Log("Number of spawn = " + spawnPoint.Length);
@@ -32,13 +36,23 @@ public class GameManager : MonoBehaviour
         //lanceur de nouvelle vague
         if (GameObject.FindGameObjectsWithTag("Monster").Length == 0)    // if still no monster
         {
-            if (MonsterFromPreviousWaveSpawned == true)
+            waveCompteur += 1;      // implement wave count
+            Debug.Log(waveCompteur);
+            int choiceSpawn = Random.Range(0, spawnPoint.Length -1 );
+            this.spawnPointChoosed = spawnPoint[choiceSpawn];
+            //to spawn arrow to indicate where monsters spawn
+            arrows[choiceSpawn].SetActive(true);
+            Invoke("RemoveArrow",4);
+
+            for(int i = 0; i < waveCompteur ; i ++)
             {
-                waveCompteur += 1;      // implement wave count
-                MonsterFromPreviousWaveSpawned = false;
-                this.SpawnMonster();    // spawn monster
+                float timeToWaitBeforeSpawn = (float)i /2;
+                Invoke("SpawnMonster", timeToWaitBeforeSpawn);   // spawn monster
             }
+
+               
         }
+        
     }
 
 
@@ -56,34 +70,24 @@ public class GameManager : MonoBehaviour
     private void SpawnMonster()
     {
         // Get random spawn Point
-        int choiceSpawn = Random.Range(0, spawnPoint.Length -1 );
-        GameObject spawnPointChoosed = spawnPoint[choiceSpawn];
+        
+        // Spawn Big Monster
+        Instantiate(Monsters[2], this.spawnPointChoosed.transform);
 
-
-        //to spawn arrow to indicate where monsters spawn
-        arrows[choiceSpawn].SetActive(true);
-        Invoke("RemoveArrow",4);
+        
         // spawn small monster
-        for (int i = 0; i < waveCompteur; i++)
-        {
-            Instantiate(Monsters[0], spawnPointChoosed.transform);
-            Instantiate(Monsters[0], spawnPointChoosed.transform);
-            Instantiate(Monsters[0], spawnPointChoosed.transform);
-            Instantiate(Monsters[0], spawnPointChoosed.transform);
-        }
+        Instantiate(Monsters[0], this.spawnPointChoosed.transform);
+        Instantiate(Monsters[0], this.spawnPointChoosed.transform);
+        Instantiate(Monsters[0], this.spawnPointChoosed.transform);
+        Instantiate(Monsters[0], this.spawnPointChoosed.transform);
+        
 
         // Spawn Normal Monster
-        for (int i = 0; i < waveCompteur; i++)
-        {
-            Instantiate(Monsters[1], spawnPointChoosed.transform);
-            Instantiate(Monsters[1], spawnPointChoosed.transform);
-        }
+        Instantiate(Monsters[1], this.spawnPointChoosed.transform);
+        Instantiate(Monsters[1], this.spawnPointChoosed.transform);
+        
 
-        // Spawn Big Monster
-        for (int i = 0; i < waveCompteur; i++)
-        {
-            Instantiate(Monsters[2], spawnPointChoosed.transform);
-        }
+        
         MonsterFromPreviousWaveSpawned = true;
     }
 
@@ -115,6 +119,8 @@ public class GameManager : MonoBehaviour
 
     private void EndGame()
     {
+        audioManager.GetComponent<AudioSource>().Stop();
+        audiosource.Play(0);
         endScreen.ShowDefeatMenu(score);    // show end screen with score
     }
 
