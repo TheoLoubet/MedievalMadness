@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] spawnPoint; // array of spawn points
     public GameObject[] Monsters;   // array of monster
-    
+    public GameObject[] arrows;
     void Start()
     {
         civilCount = GameObject.FindGameObjectsWithTag("Civil").Length;     // get the number of Civil
@@ -41,6 +41,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    //to remove arrow
+    public void RemoveArrow()
+    {
+        arrows[0].SetActive(false);
+        arrows[1].SetActive(false);
+        arrows[2].SetActive(false);
+    }
     // spawn monster
     private void SpawnMonster()
     {
@@ -48,6 +56,10 @@ public class GameManager : MonoBehaviour
         int choiceSpawn = Random.Range(0, spawnPoint.Length -1 );
         GameObject spawnPointChoosed = spawnPoint[choiceSpawn];
 
+
+        //to spawn arrow to indicate where monsters spawn
+        arrows[choiceSpawn].SetActive(true);
+        Invoke("RemoveArrow",4);
         // spawn small monster
         for (int i = 0; i < waveCompteur; i++)
         {
