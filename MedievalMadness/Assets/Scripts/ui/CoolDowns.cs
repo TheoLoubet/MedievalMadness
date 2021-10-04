@@ -89,7 +89,7 @@ public class CoolDowns : MonoBehaviour
             Debug.Log("dashused");
             dashImage.color = new Color(255f, 255f, 255f, 255f);
         }
-        else if (!pc.isDashUp())
+        else if (!pm.isDashUp())
         {
             Debug.Log("DashUp");
             dashImage.color = new Color(0f, 0f, 0f, 255f);
