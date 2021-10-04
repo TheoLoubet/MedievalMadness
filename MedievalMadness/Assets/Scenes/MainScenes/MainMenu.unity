@@ -2047,6 +2047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933994731}
   - component: {fileID: 933994732}
+  - component: {fileID: 933994733}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -2120,13 +2121,38 @@ MonoBehaviour:
   m_FillRect: {fileID: 1813274056}
   m_HandleRect: {fileID: 1033283438}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.1
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 933994733}
+        m_TargetAssemblyTypeName: AudioSettings, Assembly-CSharp
+        m_MethodName: SetLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &933994733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933994730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735187a16043a7f46ab137ee4c8614a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: f03bd5e46fb917f44944f6736e082981, type: 2}
 --- !u!1 &981756064
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,7 +2254,8 @@ AudioSource:
   m_GameObject: {fileID: 1006481758}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8334713379646657470, guid: f03bd5e46fb917f44944f6736e082981,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 7a33d8119e1723d4b8dfe5a0b1a799cd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -3765,10 +3792,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: tis metus, eu vestibulum lacus lorem elementum sem. Suspendisse lacinia
-    nec diam ac semper. Maecenas ut felis et urna ultrices efficitur a quis metus.
-    Praesent luctus massa nec ante interdum consectetur. Suspendisse ultrices erat
-    sed viverra posuere. Suspendisse vestibulum blandit mollis
+  m_text: "Made By :\n- Florent Bogacz\n- Th\xE9o Loubet\n- Lucien Morcrette\nYou
+    can contact us via Twitter : @TaBoO_Chris"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -3795,14 +3820,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.68
-  m_fontSizeBase: 30.68
+  m_fontSize: 50.68
+  m_fontSizeBase: 50.68
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 16
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3831,7 +3856,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -43.253937, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
